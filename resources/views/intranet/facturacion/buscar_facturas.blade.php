@@ -67,6 +67,10 @@ $(document).ready( ()=>{
 					alert(resp.mensaje)
 				else{
 					var url = "http://"+location.host+"/consultar/factura-online?factura_id="+numero.val()
+
+					var img = ""
+
+					if( resp.deoposito != null)
 					var img = "http://"+location.host+'/img/uploaders/'+resp.deposito.imagen_deposito
 					
 					var datos = `

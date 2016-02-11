@@ -50,7 +50,7 @@ class BuscarFacturas extends Controller
     			],
     			'pago' => $factura->modalidad_pago,
     			'detalles' => $detser,
-                'deposito' => $factura->soporteTransaccion
+                'deposito' => ($factura->soporteTransaccion || "")
     		];
     	}
     	else{
