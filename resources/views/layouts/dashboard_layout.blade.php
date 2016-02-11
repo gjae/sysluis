@@ -56,10 +56,10 @@
             <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                       Opciones <span class="glyphicon glyphicon-cog"></span> 
+                    <a href="{{ url('logout') }}">
+                       Salir de mi cuenta <span class="glyphicon glyphicon-log-out"></span> 
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                   <!-- <ul class="dropdown-menu dropdown-user">
                         <li>
                             <a href="#">
                                 <span class="glyphicon glyphicon-pencil"></span>
@@ -72,7 +72,7 @@
                             Salir de mi cuenta
                         </a>
                         </li>
-                    </ul>
+                    </ul>-->
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->

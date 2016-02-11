@@ -23,7 +23,7 @@
 								<label for="nombres">Nombres</label>
 
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-2">
 								<label for="apellidos">Apellidos</label>
 								<input type="text" required name="apellidos" onkeyup="soloTexto(event, this)" onkeydown="soloTexto(event, this)"  id="apellidos" class="form-control" />
 							</div>

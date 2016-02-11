@@ -36,7 +36,7 @@
 
 								
 
-								<label for="numero_factura">Numero de la factura de compra</label>
+								<label for="numero_factura">Número de la factura de compra</label>
 								<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="numero_factura" class="form-control" id="numero_factura">
 							</div>
 

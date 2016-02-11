@@ -20,7 +20,12 @@ $(document).ready(function() {
         $("#cedula").blur(function(){
             var ced = document.getElementById('cedula');
             var url = location.href+'/consultar/'+ced.value;
-
+            document.getElementById('nombres').value = ""
+            document.getElementById('apellidos').value = ""
+            document.getElementById('telefono_habitacion').value= ""
+            document.getElementById('telefono_personal').value = ""
+            document.getElementById('email').value = ""
+            document.getElementById('direccion').value =""
             $("#verificando").html('<div class="loader"></div>');
             $.getJSON(url,'', function(response){
                 if(!response.fail)
@@ -81,6 +86,10 @@ $(document).ready(function() {
         $("#modal-click").click(function(e){
             var accion = $("#accion").attr('value');
           
+            if( $("#cargar_info").serialize().indexOf("=&") != -1 ){
+                alert("AUN TIENE DATOS POR COMPLETAR EN EL FORMULARIO");
+                return false;
+            }
             if(accion == "crear" || accion == "editar")
             {
 

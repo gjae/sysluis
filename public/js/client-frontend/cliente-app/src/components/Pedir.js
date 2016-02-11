@@ -133,11 +133,11 @@ export default class Pedir extends Component{
 
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Telefono personal</label>
-										<input type="text" className="form-control" required onChange={ e => { this.soloNumeros(e, 9) } } onKeyDown={ e => { this.soloNumeros(e,9) } }  name="telefono_personal" placeholder="Telefono personal" />
+										<input type="text" className="form-control" required onChange={ e => { this.soloNumeros(e, 9) } } onKeyDown={ e => { this.soloNumeros(e,15) } }  name="telefono_personal" placeholder="Telefono personal" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Telefono de contacto</label>
-										<input type="text" className="form-control" required  onChange={ e => { this.soloNumeros(e, 9) } } onKeyDown={ e => { this.soloNumeros(e,9) } }  name="telefono_habitacion" placeholder="Telefono de contacto" />
+										<input type="text" className="form-control" required  onChange={ e => { this.soloNumeros(e, 9) } } onKeyDown={ e => { this.soloNumeros(e,15) } }  name="telefono_habitacion" placeholder="Telefono de contacto" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Numero de transaccion</label>
