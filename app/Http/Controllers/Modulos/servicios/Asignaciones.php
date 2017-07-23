@@ -14,6 +14,7 @@ use App\Categoria;
 use App\Http\Controllers\Modulos\servicios\modelos\Solicitud;
 use App\Empleado;
 use App\Asignacion;
+use App\LogProblemas;
 
 class Asignaciones extends Controller
 {
@@ -97,6 +98,17 @@ class Asignaciones extends Controller
 	    		$solicitud->estatus_id = $request->estatus_id;
 	    		$solicitud->detalles = $request->detalles;
 	    		$solicitud->save();
+
+                
+                if($request->titulo_log != ""){
+                    LogProblemas::create([
+                        'created_at' => $request->created_at,
+                        'titulo' => $request->titulo_log,
+                        'detalles' => $request->detalles_log,
+                        'user_id' => Auth::user()->id,
+                        'asignacion_id' => $solicitud->asignacion->id
+                    ]);
+                }
 	    	}
 
 	    	else throw new \Exception('No posee permisos para realizar esta accion');

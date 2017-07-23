@@ -13,11 +13,11 @@
 @section('contenedor')
 
 <div class="row">
-	<h1 class="page-header">Usuarios del sistema</h1>
+	<h1 class="page-header">Listado de solicitudes</h1>
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                Lista de usuarios registrados en el sistema
+                Solicitudes al sistema
             </div>
                         <!-- /.panel-heading -->
             <div class="panel-body">

@@ -111,6 +111,10 @@
 
 	});
 
+
+function agregar(e){
+	console.log(e)
+}
 </script>
 
 @endsection

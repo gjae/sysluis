@@ -154,6 +154,11 @@ return [
 				'descripcion_programa' => 'Programa para facturar la solicitud de un servicio',
 				'url_programa' => 'servicios/Asignaciones',
 			],
+			[
+				'nombre_programa' => 'Log de problemas resueltos',
+				'descripcion_programa' => 'Programa para ver el listado de logs de problemas resueltos por los usuarios',
+				'url_programa' => 'servicios/Logs',
+			],
 
 			//FIN DE LOS PROGRAMAS DEL MODULO
 

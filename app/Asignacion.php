@@ -10,6 +10,9 @@ class Asignacion extends Model
 
     protected $fillable = ['id_emp_to', 'id_emp_from', 'solicitud_id'];
 
+    public function logProblemas(){
+        return $this->hasMany('App\LogProblemas');
+    }
 
     public static function getAsignaciones($empleado_id = 0)
     {

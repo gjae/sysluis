@@ -40,4 +40,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Auditoria');
     }
 
+    public function logProblemas(){
+        return $this->hasMany('App\LogProblemas');
+    }
+
 }

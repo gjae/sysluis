@@ -57,4 +57,54 @@
 			<textarea name="detalles" id="" cols="30" rows="10" class="form-control">{{ trim($solicitud->detalles) }}</textarea>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<h3 class="page-header">
+				Log de problemas resueltos
+			</h3>
+		</div>
+	</div>
+
+	<div id="row">
+		<div class="col-sm-6 com-md-6 col-lg-6">
+			<table class="table table-responsive">
+				<thead>
+					<td>Fecha y hora</td>
+					<td>Titulo</td>
+					<td>Detalles</td>
+					<td>Opciones</td>
+				</thead>
+				<tbody>
+					@if($asignacion->logProblemas)
+						@foreach($asignacion->logProblemas as $key => $problema)
+							<tr>
+								<td>{{ $problema->created_at->format('d-m-Y h:i:s A') }}</td>
+								<td>{{ $problema->titulo }}</td>
+								<td style="overflow: hidden;">{{ $problema->detalles }}</td>
+								<td>
+									<button class="btn btn-danger eliminar-log" id="{{ $problema->id }}">Eliminar</button>
+								</td>
+							</tr>
+						@endforeach
+					@endif
+					<tr>
+						<td>
+							<input type="text"  readonly name="created_at" value="{{ Carbon\Carbon::now() }}">
+						</td>
+						<td>
+							<input type="text" placeholder="Titulo del error"  name="titulo_log">
+						</td>
+						<td>
+							<input type="text" placeholder="Solucion al problema"  name="detalles_log">
+						</td>
+						<td>
+							<button onClick="agregar(event)" class="btn btn-success add-log">Agregar</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
 </div>
