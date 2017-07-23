@@ -1,0 +1,7 @@
+1) Reestructurar la emisión de facturas:
+	Que pueda facturar tanto un servicio como una venta
+
+2) Agregar un precio a una solicitud de servicios:
+	cuando la solicitud sea asignada que agregue un precio
+	y un abono (si el cliente deja abonos)
+	
