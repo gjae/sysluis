@@ -101,7 +101,7 @@ class Egresos extends Controller
 			//SE RETORNA UNA RESPUESTA EN FORMATO JSON
 			finally{
 				$accion = 'El usuario intento realizar un egreso el cual resulto '.$response['estado_accion'].' en el programa "EGRESOS"';
-				auditoria($accion, $this->modulo_id, Auth::user()->id);
+				App\App\Auditoria::auditoria::App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
 				return response($response, 200)
 						->header('Content-Type','application/json');
 			}

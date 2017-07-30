@@ -108,7 +108,7 @@ class MetodosEgreso extends Controller
 
 		$accion = 'EL USUARIO HA INTENTADO SUPRIMIR DE MANERA '.$response['estatus'].' EL METODO DE EGRESO CON EL ID '.$request->id.' EN EL MODULO DE EGRESOS';
 
-		auditoria($accion, $this->modulo_id, Auth::user()->id);
+		App\App\Auditoria::auditoria::App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
 		return response($response, 200)
 				->header('Content-Type', 'application/json');
 	}

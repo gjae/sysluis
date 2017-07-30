@@ -130,7 +130,7 @@ class Asignaciones extends Controller
     	}
     	finally{
     		$accion = 'EL USUARIO HA EJECUTADO UN '.$response['estatus'].' DE ACTUALIZACION DE LA SOLICITUD '.$solicitud->codigo_solicitud;
-    		auditoria($accion, $this->modulo_id, Auth::user()->id);
+    		App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
     		return response($response, 200)->header('Content-Type', 'application/json');
     	}
 
