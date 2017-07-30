@@ -93,7 +93,7 @@ class Asignaciones extends Controller
 	    	if(! $solicitud)
 	    		throw new \Exception('No se ha encontrado solicitud');
 
-	    	if(App\Permiso::check_permisos('UPDATE', Auth::user()->id, $this->modulo_id))
+	    	if(\App\Permiso::check_permisos('UPDATE', Auth::user()->id, $this->modulo_id))
 	    	{
 	    		$solicitud->estatus_id = $request->estatus_id;
 	    		$solicitud->detalles = $request->detalles;
@@ -130,7 +130,7 @@ class Asignaciones extends Controller
     	}
     	finally{
     		$accion = 'EL USUARIO HA EJECUTADO UN '.$response['estatus'].' DE ACTUALIZACION DE LA SOLICITUD '.$solicitud->codigo_solicitud;
-    		App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
+    		\App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
     		return response($response, 200)->header('Content-Type', 'application/json');
     	}
 

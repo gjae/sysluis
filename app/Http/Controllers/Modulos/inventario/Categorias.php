@@ -33,7 +33,7 @@ class Categorias extends Controller
 
     public function guardar(Request $request, $id)
     {
-    	if(check_permisos('CREATE', Auth::user()->id, $this->modulo_id))
+    	if(\App\Permiso::check_permisos('CREATE', Auth::user()->id, $this->modulo_id))
     	{
 	    	if(Categoria::create($request->except(['_token'])) )
 	    	{
@@ -48,7 +48,7 @@ class Categorias extends Controller
     {
     	$categoria = Categoria::find($request->id);
     	#SI EL USUARIO CONECTADO NO POSEE PERMISOS PARA REALIZAR LA ACCION
-    	if(! check_permisos('DELETE', Auth::user()->id, $this->modulo_id))
+    	if(! \App\Permiso::check_permisos('DELETE', Auth::user()->id, $this->modulo_id))
     	{
     		return [
     			'fail' => true,

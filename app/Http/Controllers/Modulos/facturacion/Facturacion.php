@@ -94,7 +94,7 @@ class Facturacion extends Controller
 
    public function factura(Request $request, $id)
    {
-      if(App\Permiso::check_permisos('CREATE', Auth::user()->id, $this->modulo_id))
+      if(\App\Permiso::check_permisos('CREATE', Auth::user()->id, $this->modulo_id))
       {
      		$data = $request->all();
 
@@ -163,7 +163,7 @@ class Facturacion extends Controller
       //EL ARGUMENTO $factura_id ES EL ID DEL SERVICIO QUE SE RETORNO EN LA
       //FUNCION FACTURA
       
-      if(App\Permiso::check_permisos('SEARCH', Auth::user()->id, $this->modulo_id))
+      if(\App\Permiso::check_permisos('SEARCH', Auth::user()->id, $this->modulo_id))
       {
         $servicio = Servicios::find($factura_id);
         $detser = DetalleServicio::getDetalleServicioOn($servicio->id);

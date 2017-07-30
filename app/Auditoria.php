@@ -23,7 +23,7 @@ class Auditoria extends Model
     }
     
     public static function auditoria($accion, $modulo_id, $user_id){
-        App\Auditoria::create([
+        Auditoria::create([
             'accion' => strtoupper( trim($accion) ),
             'modulo_id' => $modulo_id,
             'user_id' => $user_id,

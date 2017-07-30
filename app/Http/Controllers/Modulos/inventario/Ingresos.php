@@ -90,7 +90,7 @@ class Ingresos extends Controller
 		finally{
 			$accion = 'EL USUARIO INTETO REALIZAR UN INGRESO QUE RESULTO '.$response['estado_accion'].' EN EL PROGRAMA DE INGRESOS';
 
-			App\App\Auditoria::auditoria::App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
+			\App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
 			return response($response, 200)
 					->header('Content-Type', 'application/json');
 		}

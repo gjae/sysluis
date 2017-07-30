@@ -85,7 +85,7 @@ class MetodosEgreso extends Controller
 		$response = [];
 
 		try{
-			if(! App\Permiso::check_permisos('DELETE' ,   Auth::user()->id,$this->modulo_id) )
+			if(! \App\Permiso::check_permisos('DELETE' ,   Auth::user()->id,$this->modulo_id) )
 				throw new \Exception('No posee los permisos para realizar esta accion.');
 
 			RazonEgreso::where('id', '=', $request->id)
@@ -108,7 +108,7 @@ class MetodosEgreso extends Controller
 
 		$accion = 'EL USUARIO HA INTENTADO SUPRIMIR DE MANERA '.$response['estatus'].' EL METODO DE EGRESO CON EL ID '.$request->id.' EN EL MODULO DE EGRESOS';
 
-		App\App\Auditoria::auditoria::App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
+		\App\Auditoria::auditoria($accion, $this->modulo_id, Auth::user()->id);
 		return response($response, 200)
 				->header('Content-Type', 'application/json');
 	}
