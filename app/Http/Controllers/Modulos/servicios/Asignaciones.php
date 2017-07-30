@@ -93,7 +93,7 @@ class Asignaciones extends Controller
 	    	if(! $solicitud)
 	    		throw new \Exception('No se ha encontrado solicitud');
 
-	    	if(check_permisos('UPDATE', Auth::user()->id, $this->modulo_id))
+	    	if(App\Permiso::check_permisos('UPDATE', Auth::user()->id, $this->modulo_id))
 	    	{
 	    		$solicitud->estatus_id = $request->estatus_id;
 	    		$solicitud->detalles = $request->detalles;

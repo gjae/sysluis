@@ -70,7 +70,7 @@ class Egresos extends Controller
 		\DB::beginTransaction();
 			try{
 
-				if( !check_permisos('UPDATE', Auth::user()->id, $this->modulo_id) )
+				if( !App\Permiso::check_permisos('UPDATE', Auth::user()->id, $this->modulo_id) )
 					throw new \Exception("No posee permisos para realizar esta accion", 1);
 					
 				$stock = Stock::where('id','=',$request->stock_id)->first();

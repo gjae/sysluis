@@ -42,7 +42,7 @@ class Hardware extends Controller
 
    	public function  guardar(Request $request, $id)
    	{
-   		if(check_permisos('CREATE', Auth::user()->id, $this->modulo_id))
+   		if(App\Permiso::check_permisos('CREATE', Auth::user()->id, $this->modulo_id))
    		{
    			if(true)
    			{
@@ -87,7 +87,7 @@ class Hardware extends Controller
 
     public function DELETE(Request $request, $id)
     {
-        if(check_permisos('DELETE', Auth::user()->id, $this->modulo_id))
+        if(App\Permiso::check_permisos('DELETE', Auth::user()->id, $this->modulo_id))
         {
             $hw = equipos::find($request->id);
             $hw->edo_reg = 0;

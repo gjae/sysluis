@@ -85,7 +85,7 @@ class MetodosEgreso extends Controller
 		$response = [];
 
 		try{
-			if(! check_permisos('DELETE' ,   Auth::user()->id,$this->modulo_id) )
+			if(! App\Permiso::check_permisos('DELETE' ,   Auth::user()->id,$this->modulo_id) )
 				throw new \Exception('No posee los permisos para realizar esta accion.');
 
 			RazonEgreso::where('id', '=', $request->id)

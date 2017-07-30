@@ -236,7 +236,7 @@ class Usuarios extends Controller
 
     private function _auth($accion)
     {
-       return check_permisos($accion, Auth::user()->id, $this->modulo_id);
+       return App\Permiso::check_permisos($accion, Auth::user()->id, $this->modulo_id);
     }
 
 }
