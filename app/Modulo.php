@@ -23,4 +23,8 @@ class Modulo extends Model
     {
         return $this->hasMany('App\Auditoria');
     }
+
+    public static function getProgramas($modulo_id){
+        return Programa::where('modulo_id', $modulo_id)->get();
+    }
 }

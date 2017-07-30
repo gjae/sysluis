@@ -103,7 +103,7 @@
                             <li>
                                 <a href="#">{{ $modulo->nombre_modulo }}<span class="caret"></span></a>
                                 <ul class="nav nav-second-level">
-                                    @foreach( getProgramas($modulo->id) as $programa)
+                                    @foreach( App\Modulo::getProgramas($modulo->id) as $programa)
                                     <li>
                                         <a href="{{ url('dashboard/'.$programa->url_programa) }}"> {{ $programa->nombre_programa }} </a>
                                     </li>
