@@ -3,3 +3,4 @@
 Homestead.yaml
 Homestead.json
 /storage/framewok/views/*.php
+.env
