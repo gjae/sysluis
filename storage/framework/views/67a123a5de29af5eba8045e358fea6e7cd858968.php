@@ -9,25 +9,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('titulo')</title>
+    <title><?php echo $__env->yieldContent('titulo'); ?></title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/metisMenu.min.css')); ?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('css/sb-admin-2.css')); ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="<?php echo e(asset('css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
 
     <!-- MIS ESTILOS -->
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    @section('css')
-    @show
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('css/estilos.css')); ?>">
+    <?php $__env->startSection('css'); ?>
+    <?php echo $__env->yieldSection(); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('css/normalize.css')); ?>">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,7 +48,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    {{ Auth::user()->empleado->persona->nombres }}
+                    <?php echo e(Auth::user()->empleado->persona->nombres); ?>
+
                 </a>
             </div>
             <!-- /.navbar-header -->
@@ -73,7 +74,7 @@
                         </li>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{ url('logout') }}"><span class="glyphicon glyphicon-log-out"></span>
+                        <li><a href="<?php echo e(url('logout')); ?>"><span class="glyphicon glyphicon-log-out"></span>
                             Desconectarme
                         </a>
                         </li>
@@ -86,32 +87,32 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div style="text-align: center;"">
-                    <img src="{{ 'http://localhost/sysgfluis/public/img/'.App\Empresa::first()->logo }}" alt="" style="max-height: 136px; max-width: 250px;" class="responsive-img">
+                    <img src="<?php echo e('http://localhost/sysgfluis/public/img/'.App\Empresa::first()->logo); ?>" alt="" style="max-height: 136px; max-width: 250px;" class="responsive-img">
                     <br>
-                    <strong>{{ App\Empresa::first()->personalidad.'-'.App\Empresa::first()->rif }}</strong>
+                    <strong><?php echo e(App\Empresa::first()->personalidad.'-'.App\Empresa::first()->rif); ?></strong>
         
                 </div>
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
 
                         <li>
-                            <a href="{{ url('dashboard') }}">
+                            <a href="<?php echo e(url('dashboard')); ?>">
                                 <i class="fa fa-dashboard fa-fw"></i> Dashboard
                             </a>
                         </li>
-                        @foreach($modulos as $modulo)
+                        <?php foreach($modulos as $modulo): ?>
                             <li>
-                                <a href="#">{{ $modulo->nombre_modulo }}<span class="caret"></span></a>
+                                <a href="#"><?php echo e($modulo->nombre_modulo); ?><span class="caret"></span></a>
                                 <ul class="nav nav-second-level">
-                                    @foreach( \App\Modulo::getProgramas($modulo->id) as $programa)
+                                    <?php foreach( \App\Modulo::getProgramas($modulo->id) as $programa): ?>
                                     <li>
-                                        <a href="{{ url('dashboard/'.$programa->url_programa) }}"> {{ $programa->nombre_programa }} </a>
+                                        <a href="<?php echo e(url('dashboard/'.$programa->url_programa)); ?>"> <?php echo e($programa->nombre_programa); ?> </a>
                                     </li>
-                                    @endforeach
+                                    <?php endforeach; ?>
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
-                        @endforeach
+                        <?php endforeach; ?>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -126,8 +127,8 @@
                         <!-- AQUI VA EL PAGE HEADER SI SE NECESITARA -->
 
                         <!-- AQUI TERMINA EL PAGE HEADER -->
-                        @section('contenedor')
-                        @show
+                        <?php $__env->startSection('contenedor'); ?>
+                        <?php echo $__env->yieldSection(); ?>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -144,18 +145,18 @@
 <body>
 
     <!-- jQuery -->
-    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+    <script src="<?php echo e(asset('js/metisMenu.min.js')); ?>"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
+    <script src="<?php echo e(asset('js/sb-admin-2.js')); ?>"></script>
 
-    @section('jquery')
-    @show
+    <?php $__env->startSection('jquery'); ?>
+    <?php echo $__env->yieldSection(); ?>
 
 </body>
 

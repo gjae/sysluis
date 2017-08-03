@@ -31,11 +31,13 @@ $(document).ready(function() {
 
 
         $("#modal-click").click(function(){
-
             var datos = $("#insertar_datos");
             var url = location.href+'/'+datos.attr('data-url');
-
-            datos.submit();
+            $.post(url, datos.serialize(),(resp) =>{
+                alert(resp.mensaje)
+                if(! resp.fail)
+                    location.reload()
+            });
 
         });
 
@@ -49,6 +51,7 @@ $(document).ready(function() {
                 $.post(url, {'id': id, '_token': token}, function(response){
                     
                         alert(response.mensaje);
+                        location.reload()
                 });
             }
         });
