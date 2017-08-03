@@ -1,8 +1,6 @@
-@extends('layouts.dashboard_layout')
+<?php $__env->startSection('titulo', 'Categorias'); ?>
 
-@section('titulo', 'Categorias')
-
-@section('contenedor')
+<?php $__env->startSection('contenedor'); ?>
 
 <div class="container-fluid">
     <div class="row">
@@ -33,24 +31,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                    	@foreach($categorias as $categoria)
-                            @if( $categoria->edo_reg == 1)
+                    	<?php foreach($categorias as $categoria): ?>
+                            <?php if( $categoria->edo_reg == 1): ?>
                                 <tr class="odd gradeX user_field">
-                                    <td>{{ $categoria->nombre_categoria }}</td>
+                                    <td><?php echo e($categoria->nombre_categoria); ?></td>
                                     <td>
-                                        <button class="btn btn-danger usuario-option delete" token="{{ csrf_token() }}" data-id="{{ $categoria->id }}" role="DELETE" >
+                                        <button class="btn btn-danger usuario-option delete" token="<?php echo e(csrf_token()); ?>" data-id="<?php echo e($categoria->id); ?>" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option edit" token="{{ csrf_token() }}" data-id="{{ $categoria->id }}" role="UPDATE">
+                                        <button class="btn btn-success usuario-option edit" token="<?php echo e(csrf_token()); ?>" data-id="<?php echo e($categoria->id); ?>" role="UPDATE">
                                             <span class="glyphicon glyphicon-pencil "></span>
                                         </button>
-                                        <button class="btn btn-warning usuario-option" token="{{ csrf_token() }}" id="permisos" role="PERMISOS" >
+                                        <button class="btn btn-warning usuario-option" token="<?php echo e(csrf_token()); ?>" id="permisos" role="PERMISOS" >
                                             <span class="glyphicon glyphicon-wrench"></span>
                                         </button>
                                     </td>
                                 </tr>
-                            @endif
-                        @endforeach
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </tbody>
 				</table>
 
@@ -82,7 +80,8 @@
                         <div class="col-sm-10">
                             <label for="nombre_catergoria">Nombre de la nueva categoria</label>
                             <input type="text" name="nombre_categoria" id="nombre_categoria" class="form-control">
-                             {{ csrf_field() }}
+                             <?php echo e(csrf_field()); ?>
+
                         </div>
                     </form>
                 </div>
@@ -104,12 +103,14 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('jquery')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src=" {{ asset('js/dataTables.bootstrap.min.js') }} "></script>
-<script src="{{ asset('js/dataTables.responsive.js')  }}"></script>
+<?php $__env->startSection('jquery'); ?>
+<script src="<?php echo e(asset('js/jquery.dataTables.min.js')); ?>"></script>
+<script src=" <?php echo e(asset('js/dataTables.bootstrap.min.js')); ?> "></script>
+<script src="<?php echo e(asset('js/dataTables.responsive.js')); ?>"></script>
 
-<script src="{{ asset('js/hardware.js') }}"></script>
-@endsection
+<script src="<?php echo e(asset('js/hardware.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.dashboard_layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

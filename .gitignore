@@ -4,3 +4,5 @@ Homestead.yaml
 Homestead.json
 /storage/framewok/views/*.php
 .env
+/public/img/*.jpg
+/public/img/*.png
