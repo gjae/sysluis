@@ -81,7 +81,7 @@ $(document).ready(function() {
         $("#modal-click").click(function(e){
             var accion = $("#accion").attr('value');
           
-            if(accion == "crear")
+            if(accion == "crear" || accion == "editar")
             {
 
                 var password = document.getElementById('password').value;
@@ -109,13 +109,14 @@ $(document).ready(function() {
         {
             var user = $(this).attr('data-user');
             var role = $(this).attr('role');
-            var url = location.href+'/'+role;
+            var data_action = $(this).attr('data-action');
+            var url = location.href+'/'+role+'?user_id='+user;
             var token = $(this).attr('token');
 
             $("#user_id").attr('value', user);
             if(role=="DELETE" && confirm("¿Esta seguro que desea suprimir este usuario?"))
             {
-               $.post(url, {'id' : user, '_token': token},function(response){
+               $.post(url, {'id' : $("#user_id").val(), '_token': token},function(response){
 
                     if(!response.fail){
                         alert("Se ha suprimido el registro satisfactoriamente");
@@ -126,11 +127,11 @@ $(document).ready(function() {
                });
             }
 
-            if(role == "PERMISOS")
+            else
             {
                 $("#verificando").html('<div class="loader"></div>');
 
-               var url = location.href+'/formulario/permisos';
+               var url = location.href+'/formulario/'+data_action+'?user_id='+user;
 
                var modal = $("#modal_forms");
                $("#row-form").addClass('hidden');

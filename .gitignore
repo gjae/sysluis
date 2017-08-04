@@ -6,3 +6,4 @@ Homestead.json
 .env
 /public/img/*.jpg
 /public/img/*.png
+/storage/framework/views/*.php
