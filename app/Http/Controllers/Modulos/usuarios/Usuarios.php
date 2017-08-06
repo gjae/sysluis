@@ -19,8 +19,10 @@ use App\User;
 use App\Persona;
 use App\Empleado;
 use App\Modulo;
+use App\Auditoria;
 use App\Permiso;
 use Storage;
+use DB;
 
 class Usuarios extends Controller
 {
@@ -41,14 +43,25 @@ class Usuarios extends Controller
     	]);
     }
 
+    /**
+     * FUNCION PARA BUSCAR UN FORMULARIO DENTRO DEL SISTEMA
+     * SE HACE LA BUSQUEDA A PARTIR DE UNA SOLICITUD DE TIPO AJAX
+     */
+
     public function formulario($request,$form)
     {
         if($request->ajax())
         {   
-            $form = view()->make('intranet.formularios.'.$form, [
-                'modulos' => Modulo::where('edo_reg', 1)->get(),
-                'permisos' => Permiso::where('edo_reg', 1)->get()
-            ])->render();
+            if($form != 'editar')
+                $form = view()->make('intranet.formularios.'.$form, [
+                    'modulos' => Modulo::where('edo_reg', 1)->get(),
+                    'permisos' => Permiso::where('edo_reg', 1)->get()
+                ])->render();
+            else{
+                $form = view()->make('intranet.formularios.'.$form, [
+                    'user' => User::find($request->user_id),
+                ])->render();
+            }
             //$form = formularios($request, $form);
         }
         else return redirect()->to('/dashboard/usuarios');
@@ -231,6 +244,47 @@ class Usuarios extends Controller
         }
 
         return $permisologia;
+    } 
+
+    /**
+     * METODO PARA ACTUALIZAR A LOS USUARIOS
+     * |    ESTE METODO PRIMERAMENTE CONSULTA SI EL USUARIO POSEE PERMISOS
+     * |    PARA ACTUALIZAR, DE SER ASI PERMITE LA ACTUALIZACION
+     * |    EN EL CASO CONTRARIO SE LANZA UNA EXCEPCION INDICANDO
+     * |    QUE EL USUARIO NO POSEE PERMISOS DE ACTUALIZACION DE REGISTROS
+     */
+
+    public function editar($req, $id){
+        $user = User::find($req->user_id);
+        DB::beginTransaction();
+        try{
+            if( $this->_auth('UPDATE') ){
+
+                if($user->empleado->persona->update($req->all())){
+                    if($user->update($req->all())){
+                        Auditoria::create([
+                            'accion' => 'EL USUARIO '.Auth::user()->empleado->persona->nombres.' HA REALIZADO UNA ACTUALIZACION DEL AL REGISTRO DEL USUARIO '.$user->usuario,
+                            'user_id' => Auth::user()->id,
+                            'modulo_id' => $this->modulo_id
+                        ]);
+                        DB::commit();
+                        return redirect()
+                            ->to('dashboard/usuarios/Usuarios')
+                            ->with('exito', 'SE HAN ACTUALIZADO LOS DATOS DE MANERA CORRECTA');
+                    }
+                }
+
+            }else{
+                throw new Exception("El usuario no tiene permisos para actualizar en este modulo, consulte a su supervisor", 1);
+                
+            }
+        }catch(\Exception $e){
+            DB::rollback();
+            return redirect()
+                ->to('dashboard/usuarios/Usuarios')
+                ->with('error', 'Ha ocurrido un error: '.$e->getMessage() );
+        }
+
     }
 
 

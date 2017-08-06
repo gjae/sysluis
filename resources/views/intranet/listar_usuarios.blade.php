@@ -13,6 +13,21 @@
 @section('contenedor')
 
 <div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                @if(Session::has('exito'))
+                    <div class="alert alert-success">
+                        {{ Session::get('exito') }}
+                    </div>
+                @elseif(Session::has('error'))
+                    <div class="alert alert-danter">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
 	<h1 class="page-header">Usuarios del sistema</h1>
     <div class="col-lg-12">
         <div class="panel panel-primary">
@@ -54,10 +69,10 @@
                                         <button class="btn btn-danger usuario-option" token="{{ csrf_token() }}" role="DELETE" data-user="{{ $persona->empleado->user->id }}">
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option" token="{{ csrf_token() }}" role="UPDATE" data-user="{{ $persona->empleado->user->id }}">
+                                        <button class="btn btn-success usuario-option" token="{{ csrf_token() }}" role="UPDATE" data-user="{{ $persona->empleado->user->id }}" data-action="editar">
                                             <span class="glyphicon glyphicon-pencil "></span>
                                         </button>
-                                        <button class="btn btn-warning usuario-option" token="{{ csrf_token() }}" id="permisos" role="PERMISOS" data-user="{{ $persona->empleado->user->id }}">
+                                        <button class="btn btn-warning usuario-option" token="{{ csrf_token() }}" id="permisos" role="PERMISOS" data-user="{{ $persona->empleado->user->id }}" data-action="permisos">
                                             <span class="glyphicon glyphicon-wrench"></span>
                                         </button>
                                     </td>
