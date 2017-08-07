@@ -74,7 +74,7 @@
                         </li>
                         <li class="divider"></li>
                         <li><a href="{{ url('logout') }}"><span class="glyphicon glyphicon-log-out"></span>
-                            Desconectarme
+                            Salir de mi cuenta
                         </a>
                         </li>
                     </ul>
