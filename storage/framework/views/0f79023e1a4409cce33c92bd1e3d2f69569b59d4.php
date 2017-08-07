@@ -11,6 +11,23 @@
 <?php $__env->startSection('contenedor'); ?>
 
 <div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <?php if(Session::has('exito')): ?>
+                    <div class="alert alert-success">
+                        <?php echo e(Session::get('exito')); ?>
+
+                    </div>
+                <?php elseif(Session::has('error')): ?>
+                    <div class="alert alert-danter">
+                        <?php echo e(Session::get('error')); ?>
+
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
 	<h1 class="page-header">Usuarios del sistema</h1>
     <div class="col-lg-12">
         <div class="panel panel-primary">
@@ -52,10 +69,10 @@
                                         <button class="btn btn-danger usuario-option" token="<?php echo e(csrf_token()); ?>" role="DELETE" data-user="<?php echo e($persona->empleado->user->id); ?>">
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option" token="<?php echo e(csrf_token()); ?>" role="UPDATE" data-user="<?php echo e($persona->empleado->user->id); ?>">
+                                        <button class="btn btn-success usuario-option" token="<?php echo e(csrf_token()); ?>" role="UPDATE" data-user="<?php echo e($persona->empleado->user->id); ?>" data-action="editar">
                                             <span class="glyphicon glyphicon-pencil "></span>
                                         </button>
-                                        <button class="btn btn-warning usuario-option" token="<?php echo e(csrf_token()); ?>" id="permisos" role="PERMISOS" data-user="<?php echo e($persona->empleado->user->id); ?>">
+                                        <button class="btn btn-warning usuario-option" token="<?php echo e(csrf_token()); ?>" id="permisos" role="PERMISOS" data-user="<?php echo e($persona->empleado->user->id); ?>" data-action="permisos">
                                             <span class="glyphicon glyphicon-wrench"></span>
                                         </button>
                                     </td>

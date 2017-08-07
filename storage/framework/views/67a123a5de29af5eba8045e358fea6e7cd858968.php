@@ -75,7 +75,7 @@
                         </li>
                         <li class="divider"></li>
                         <li><a href="<?php echo e(url('logout')); ?>"><span class="glyphicon glyphicon-log-out"></span>
-                            Desconectarme
+                            Salir de mi cuenta
                         </a>
                         </li>
                     </ul>
@@ -87,7 +87,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div style="text-align: center;"">
-                    <img src="<?php echo e('http://localhost/sysgfluis/public/img/'.App\Empresa::first()->logo); ?>" alt="" style="max-height: 136px; max-width: 250px;" class="responsive-img">
+                    <img src="<?php echo e('http://localhost/sysluis/public/img/'.App\Empresa::first()->logo); ?>" alt="" style="max-height: 136px; max-width: 250px;" class="responsive-img">
                     <br>
                     <strong><?php echo e(App\Empresa::first()->personalidad.'-'.App\Empresa::first()->rif); ?></strong>
         

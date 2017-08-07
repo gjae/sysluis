@@ -86,7 +86,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div style="text-align: center;"">
-                    <img src="{{ 'http://localhost/sysgfluis/public/img/'.App\Empresa::first()->logo }}" alt="" style="max-height: 136px; max-width: 250px;" class="responsive-img">
+                    <img src="{{ 'http://localhost/sysluis/public/img/'.App\Empresa::first()->logo }}" alt="" style="max-height: 136px; max-width: 250px;" class="responsive-img">
                     <br>
                     <strong>{{ App\Empresa::first()->personalidad.'-'.App\Empresa::first()->rif }}</strong>
         
