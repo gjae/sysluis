@@ -16,8 +16,8 @@ export default class Card extends Component{
 					<Col xs={12} sm={12} md={4} lg={4} className="card" key={index}>
 
 						<Row>
-							<Col xs={12} sm={12} md={12} lg={12}>
-								<img src={objeto.imagen} alt={objeto.imagen} />
+							<Col xs={12} sm={12} md={12} lg={12} style={ { textAlign: 'center' } }>
+								<h3>{objeto.title}</h3>
 							</Col>
 							<Col xs={12} sm={12} md={12} lg={12}>
 								<p className="text-justify">

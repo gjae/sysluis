@@ -22,7 +22,7 @@ export default class Jumbo extends Component{
 								Ofrecemos el mejor servicio electronico
 							</h2>
 							<h3>
-								A televisores, computadoras y de mas...
+								A televisores, computadoras y laptops.
 							</h3>
 						</Col>
 

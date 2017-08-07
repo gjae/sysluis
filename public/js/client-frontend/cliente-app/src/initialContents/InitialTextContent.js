@@ -3,7 +3,7 @@ const cardsContainer = {
     contents: [
         {
             title: "Historia",
-            imagen: "url...",
+            imagen: "Historia",
             content: `
                 Servi-Tech es una empresa creada formalmente el 19 
                 de Marzo del 2012 orientada a la excelencia en aquello
@@ -23,8 +23,8 @@ const cardsContainer = {
             `
         },
         {
-            title: "Mision",
-            imagen: "url...",
+            title: "Misión",
+            imagen: "Mision",
             content: `
 				Prestar el mejor servicio tecnológico superando las necesidades y 
 				requerimientos de nuestros clientes, basándonos en los métodos y 
@@ -41,8 +41,8 @@ const cardsContainer = {
             `
         },
         {
-        	title: "Vision",
-        	imagen: "url...",
+        	title: "Visión",
+        	imagen: "Vision",
         	content: `
 				Ser el mejor proveedor de servicio tecnológico en Venezuela 
 				para satisfacer plenamente las necesidades de nuestros clientes. 
