@@ -38,4 +38,13 @@ class Hardware extends Model
     public function detalle_servicio(){
         return $this->hasMany('App\DetalleServicio');
     }
+    
+    public static function hardwaresVendidosPorId($hardware_id){
+        $cuenta = \DB::table('detalles_servicios')->where([
+            ['hardware_id', $hardware_id],
+            ['activo', 1],
+        ])->select(\DB::raw('count(hardware_id) as vendidos'))->get();
+
+        return $cuenta[0]->vendidos;
+    }
 }
