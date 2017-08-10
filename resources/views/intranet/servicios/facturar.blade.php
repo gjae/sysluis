@@ -73,7 +73,6 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar ventana</button>
-        <button type="button" class="btn btn-primary" id="modal-click">Save changes</button>
       </div>
     </div>
   </div>
@@ -127,8 +126,13 @@
 			event.preventDefault()
 			var total = parseFloat( $("#total").val() );
 			var recibido = parseFloat(recibido);
-			if( recibido > total )
-				$("#cambio").val( parseFloat(recibido) - total );
+
+			console.log( recibido > total )
+			
+			$("#cambio").val( parseFloat(recibido) - total );
+			if ( recibido < total )
+				alert("EL DINERO RECIBIDO ES MENOR AL TOTAL, SE REGISTRARA UNA PERDIDA")
+
 		}
 	}
 
@@ -153,6 +157,18 @@
 
         	$.post(url, data, success);
         }
+	}
+
+	function modalidad_pago(opcion){
+		if( opcion != 1 ){
+			if( $("#nro_transaccion").hasClass('hidden') )
+				$("#nro_transaccion").removeClass('hidden')
+		}
+		else if( opcion==1 && !$("#nro_transaccion").hasClass('hidden'))
+		{
+			$("#codigo_pago").val("")
+			$("#nro_transaccion").addClass('hidden')
+		}
 	}
 
 </script>

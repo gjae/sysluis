@@ -83,7 +83,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar ventana</button>
-        <button type="button" class="btn btn-primary" id="modal-click">Save changes</button>
+        <button type="button" class="btn btn-primary" id="modal-click">Guardar cambios</button>
       </div>
     </div>
   </div>

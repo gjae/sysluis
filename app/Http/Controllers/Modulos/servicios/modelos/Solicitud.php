@@ -30,10 +30,6 @@ class Solicitud extends Model
         return $this->belongsTo('App\Categoria');
     }
 
-    public function getTotalAttribute($value){
-        return number_format($value, 2);
-    }
-
     public function setCreatedAtAttribute($value){
         $this->attributes['created_at'] = Carbon::parse($value)->format('Y-m-d');
     }

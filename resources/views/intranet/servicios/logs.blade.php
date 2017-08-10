@@ -17,9 +17,9 @@
             	<div class="container">
             		<div class="row">
             			<div class="col-sm-12">
-            				<button class="btn btn-primary btn-forms" formulario="crear_usuario" data-toggle="modal" data-target="#modal_forms">
+            			<!--<button class="btn btn-primary btn-forms" formulario="crear_usuario" data-toggle="modal" data-target="#modal_forms">
             					 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Crear
-            				</button>
+            				</button> -->
             			</div>
             		</div>
             	</div>
