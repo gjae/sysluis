@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/consultar/factura-online','web\PagosWeb@facturaOnline');
 Route::group(['prefix' => 'api'], function(){
 	Route::get('/productos', 'api\ApiController@productos');
 });
@@ -23,7 +22,7 @@ Route::group(['prefix' => 'instalar'], function(){
 });
 
 Route::group(['middleware' => 'instalado'], function(){
-	Route::get('/', 'web\SitioWeb@index');
+	Route::get('/', 'Auth\AuthController@showLoginForm');
 
 	Route::group(['prefix' => 'solicitudes'], function(){
 

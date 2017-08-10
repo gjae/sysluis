@@ -51,10 +51,12 @@ class Facturar extends Controller
    	public function detalles($request)
    	{
    		$solicitud = Solicitud::where('id', $request->_id)->first();
-   		$formulario = \View::make('intranet.servicios.formularios.detalles_factura', ['solicitud' => $solicitud,
+
+        // return dd($solicitud->total);
+   		$formulario = \View::make('intranet.servicios.formularios.detalles_factura', [
+            'solicitud' => $solicitud,
             'modalidades' => ModalidadPago::all(),
-            ])
-   			->render();
+         ])->render();
 
    		$response = [
    			'error' => false,

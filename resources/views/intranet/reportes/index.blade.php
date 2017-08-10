@@ -97,7 +97,7 @@ $(document).ready(function(){
 					tr+= "<tr><td>"+respuesta.facturas[i].id+"</td>";
 					tr+= "<td>"+respuesta.facturas[i].created_at+"</td><td>"+respuesta.facturas[i].subtotal+"</td><td>"+respuesta.facturas[i].iva+"</td><td>"+respuesta.facturas[i].total+"</td>";
 
-					ref = ( respuesta.facturas[i].tipo_servicio_id == 4 )? location.host+'/index.php/dashboard/servicios/Facturar/factura/'+respuesta.facturas[i].id : location.host+'/dashboard/facturacion/Facturacion/consultarFactura/'+respuesta.facturas[i].id;
+					ref = ( respuesta.facturas[i].tipo_servicio_id == 4 )? 'http://'+location.host+'/index.php/dashboard/servicios/Facturar/factura/'+respuesta.facturas[i].id : 'http://'+location.host+'/dashboard/facturacion/Facturacion/consultarFactura/'+respuesta.facturas[i].id;
 					tr+="<td><a  accion='imprimir' href='"+ref+"' class='btn btn-primary'>Imprimir</a>"
 					//tr+="<td><button accion='anular' class='btn btn-warning' numero='"+respuesta.facturas[i].id+"'>Anular</button>"
 

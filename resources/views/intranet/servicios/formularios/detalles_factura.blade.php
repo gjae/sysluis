@@ -61,7 +61,7 @@
 
 		<div class="col-sm-3">
 			<label for="">Forma de pago</label>
-			<select name="modalidad_pago_id" id="modalidad_pago_id" onChange="modalidad_pago()" class="form-control">
+			<select name="modalidad_pago_id" id="modalidad_pago_id" onChange="modalidad_pago(this.value)" class="form-control">
 				<option value="">------</option>
 				@foreach($modalidades as $modalidad)
 					<option value="{{ $modalidad->id }}">
@@ -71,8 +71,8 @@
 			</select>
 		</div>
 
-		<div class="col-sm-3">
-			<label for="">Nro. de transaccion</label>
+		<div class="col-sm-3 hidden" id="nro_transaccion">
+			<label for="">Nro. de transaccion / cheque</label>
 			<input type="text" name="codigo_pago" id="codigo_pago" class="form-control">
 		</div>
 	</div>

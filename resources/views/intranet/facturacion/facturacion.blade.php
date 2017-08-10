@@ -47,7 +47,7 @@
 					</div>
 					<div class="col-sm-3">
 						<label for="">Seleccione una forma de pago</label>
-						<select name="modalidad_pago_id" id="" class="form-control">
+						<select name="modalidad_pago_id" id="modalidad_pago_id" class="form-control">
 							<option value="">----</option>
 							@foreach($formas_pagos as $forma)
 								<option value="{{ $forma->id }}">{{ $forma->nombre_modalidad }}</option>

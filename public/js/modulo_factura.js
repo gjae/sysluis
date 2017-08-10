@@ -72,13 +72,14 @@ function codigo(evento, codigo_hardware){
 				html ='<tr><td><input type="text" onKeypress="stop(event, this.value)" class="form-control" onChange="editarTotal(this.value)" id="cantidad" name="cantidad[]" value="1"></td><td><input type="text" class="form-control disabled" readonly="readonly" name="producto[]" value="'+response[0].nombre_hardware+'"></td><td><input type="text" class="form-control disabled"  readonly="readonly" name="precio[]" id="precio'+ins+'" value="'+response[0].precio+'"></td><td><input type="hidden" name="hardware_id[]" value="'+response[0].id+'"></td></tr>';
 				$("#productos_lista").append(html);
 				var total = $("#total").attr('value');
-				alert(total);
+				
 				var total = (parseFloat(total) + parseFloat(response[0].precio)) + ((response[0].precio)*0.12);
 				
 				$("#total").attr('value', total);
 				
 				
 			}
+			$("#codigo_hardware").val('');
 		});
 	}
 	//html = html+'<tr><td><input type="text" class="form-control" name="cantidad[]" value="3"></td><td><input type="text" class="form-control disabled" name="producto[]" value="Mouse genius"></td><td><input type="text" class="form-control disabled" name="precio[]" value="1100"></td></tr>';
@@ -130,13 +131,19 @@ function facturar(evento)
 	var datos = $("#facturacion").serialize();
 
 	var url = location.href +'/factura';
-	$.post(url, datos, function(response){
-		if(! response.fail)
-		{
-			window.open(location.href+'/consultarFactura/'+response.factura_id, 'popup');
-		}
-		else alert(response.mensaje_error);
-	});
-	$("#formulario_facturas").html(formulario);
-	ins = 0;
+
+	if( $("#modalidad_pago_id").val() != "" )
+	{
+		$.post(url, datos, function(response){
+			if(! response.fail)
+			{
+				window.open(location.href+'/consultarFactura/'+response.factura_id, 'popup');
+			}
+			else alert(response.mensaje_error);
+		});
+		$("#formulario_facturas").html(formulario);
+		ins = 0;
+	}
+	else alert("NO SE HA SELECCIONADO UN METODO DE PAGO");
+
 }
