@@ -32,7 +32,7 @@ export default class Navigator extends Component{
 			        <NavItem eventKey={1} href="/">Inicio</NavItem>
 			        <NavItem eventKey={2} href="consultar">Estatus de solicitud</NavItem>
 			        <NavItem eventKey={3} href="productos">Productos</NavItem>
-			        <NavItem eventKey={3} href="solicitar-servicio">Solicititar servicio</NavItem>
+			        <NavItem eventKey={3} href="solicitar-servicio">Solicitar servicio</NavItem>
 			        {this.props.children}
 			      </Nav>
 			    </Navbar.Collapse>

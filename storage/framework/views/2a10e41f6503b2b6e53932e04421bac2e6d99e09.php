@@ -46,7 +46,7 @@
 					</div>
 					<div class="col-sm-3">
 						<label for="">Seleccione una forma de pago</label>
-						<select name="modalidad_pago_id" id="" class="form-control">
+						<select name="modalidad_pago_id" id="modalidad_pago_id" class="form-control">
 							<option value="">----</option>
 							<?php foreach($formas_pagos as $forma): ?>
 								<option value="<?php echo e($forma->id); ?>"><?php echo e($forma->nombre_modalidad); ?></option>

@@ -50,7 +50,7 @@
                                     <td><?php echo e($hardware->nombre_hardware); ?></td>
                                     <td><?php echo e($hardware->codigo_hardware); ?></td>
                                     <td><?php echo e(number_format($hardware->precio, 2)); ?></td>
-                                    <td><?php echo e($hardware->stock->stock - hardwaresVendidosPorId($hardware->id)); ?></td>
+                                    <td><?php echo e($hardware->stock->stock - \App\Hardware::hardwaresVendidosPorId($hardware->id)); ?></td>
                                     <td>
                                         <button class="btn btn-danger usuario-option delete" token="<?php echo e(csrf_token()); ?>" data-id="<?php echo e($hardware->id); ?>" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>

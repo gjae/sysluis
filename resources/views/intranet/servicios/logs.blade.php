@@ -6,11 +6,11 @@
 
 
 <div class="row">
-	<h1 class="page-header">Logs de problemas resueltos</h1>
+	<h1 class="page-header">Registro de fallas</h1>
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                Lista de problemas resueltos por los usuarios
+                Lista de problemas resueltos por los técnicos
             </div>
                         <!-- /.panel-heading -->
             <div class="panel-body">
