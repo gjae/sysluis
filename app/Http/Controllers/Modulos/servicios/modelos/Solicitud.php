@@ -56,7 +56,20 @@ class Solicitud extends Model
 
         $ultimos_digitos = "";
         if( $terminal )
+        {
             $ultimos_digitos = $terminal->code+1;
+            $data = \DB::table('solicitudes')->where('codigo_solicitud', $now->year.'0'.$now->month.'-0'.$ultimos_digitos)->first();
+            $i = 1;
+
+            if( $data )
+            {   
+                while($data){
+                    $data = \DB::table('solicitudes')->where('codigo_solicitud', $now->year.'0'.$now->month.'-0'.$ultimos_digitos)->first();
+                    $i++;
+                    $ultimos_digitos = $terminal->code + $i;
+                }
+            }
+        }
         else
             $ultimos_digitos = 0;
 

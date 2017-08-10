@@ -22,7 +22,9 @@ Route::group(['prefix' => 'instalar'], function(){
 });
 
 Route::group(['middleware' => 'instalado'], function(){
-	Route::get('/', 'Auth\AuthController@showLoginForm');
+	Route::get('/', function(){
+		return redirect()->to('/dashboard');
+	});
 
 	Route::group(['prefix' => 'solicitudes'], function(){
 
