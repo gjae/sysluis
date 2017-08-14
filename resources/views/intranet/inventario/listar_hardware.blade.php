@@ -14,7 +14,16 @@
 @section('contenedor')
 
 <div class="container-fluid">
+ 
     <div class="row">
+       @if(Session::has('actualizado'))
+            <alert class="alert alert-success col-sm-11 col-lg-11">{{ Session::get('actualizado') }}</alert>
+            @elseif(Session::has('error'))
+                <alert class="alert alert-danger col-sm-11 col-lg-11">
+                    {{ Session::get('error') }}
+                </alert>
+        @endif
+
         <div class="col-lg-12">
             <h1 class="page-header">Stock de mercancía a la fecha</h1>
                     <div class="panel panel-primary">
@@ -56,11 +65,8 @@
                                         <button class="btn btn-danger usuario-option delete" token="{{ csrf_token() }}" data-id="{{ $hardware->id }}" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option" token="{{ csrf_token() }}" role="UPDATE">
+                                        <button class="btn btn-success btn-forms" token="{{ csrf_token() }}" formulario="actualizar" data-id="{{ $hardware->id }}" >
                                             <span class="glyphicon glyphicon-pencil "></span>
-                                        </button>
-                                        <button class="btn btn-warning usuario-option" token="{{ csrf_token() }}" id="permisos" role="PERMISOS" >
-                                            <span class="glyphicon glyphicon-wrench"></span>
                                         </button>
                                     </td>
                                 </tr>
@@ -83,7 +89,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de usuarios <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestion de inventario<span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 

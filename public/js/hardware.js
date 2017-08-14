@@ -17,7 +17,12 @@ $(document).ready(function() {
             $(".modal-footer").html("");
             modal = $('#modal_hardware');
             modal.modal('show');
+
+            var id = $(this).attr('data-id');
+
             var url = location.href+'/formularios/'+dataForms;
+
+            url += ( id != undefined ) ? '?hardware_id='+id : '';
 
             $("#verificando").html('<div class="loader"></div>');
             $.getJSON(url, '', function(response){

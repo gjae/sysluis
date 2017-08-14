@@ -24,7 +24,7 @@ class Facturar extends Controller
     private $mods;
     private $modulo_id;
 
-    public function __construct($id)
+    public function __construct($id = 1)
     {
     	$this->modulo_id = $id;
     	$this->mods = ModPerUser::getModulos(Auth::user()->id);

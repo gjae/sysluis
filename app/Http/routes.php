@@ -26,6 +26,8 @@ Route::group(['middleware' => 'instalado'], function(){
 		return redirect()->to('/dashboard');
 	});
 
+	Route::get('consultar/factura-online', 'Modulos\facturacion\Facturacion@facturaOnline');
+
 	Route::group(['prefix' => 'solicitudes'], function(){
 
 		Route::post('/servicios', 'web\SitioWeb@solicitarServicio');
@@ -81,5 +83,6 @@ Route::group(['middleware' => 'instalado'], function(){
 		});
 		
 	});
+
 
 });

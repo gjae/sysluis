@@ -63,4 +63,8 @@ class Servicios extends Model
  			return '0000'.$value;
  	}	
 
+ 	public function getId(){
+ 		return $this->attributes['id'];
+ 	}
+
 }

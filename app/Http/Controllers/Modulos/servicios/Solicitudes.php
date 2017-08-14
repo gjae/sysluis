@@ -21,7 +21,7 @@ use App\Categoria;
 use App\Http\Controllers\Modulos\servicios\modelos\Solicitud;
 use App\Empleado;
 use App\Asignacion;
-
+use App\TipoServicio;
 class Solicitudes extends Controller
 {
     private $mods;
@@ -59,7 +59,22 @@ class Solicitudes extends Controller
 
         return json_encode(['fail' => false, 'formulario' => $select]);
     }
+    
+    public function formulario($request,$form)
+    {
+        if(true)
+        {   
+            $form = view()->make('intranet.formularios.'.$form, [
+                    'categorias' => Categoria::where('edo_reg',1)->get(),
+                    'tiposervicio' => TipoServicio::all()
+            ])->render();
+            //$form = formularios($request, $form);
+        }
+        else return redirect()->to('/dashboard/usuarios');
 
+        return response(['fail' => false, 'formulario'=>$form], 200)
+                ->header('Content-Type', 'application/json');
+    }
     /**
     *   FUNCIÓN PARA ASIGNAR UNA SOLICITUD A UN EMPLEADO
     *   CREA UNA NUEVA ASIGNACIÓN Y HACE UN

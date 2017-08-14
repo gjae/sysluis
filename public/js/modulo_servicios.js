@@ -11,6 +11,12 @@ $(document).ready(function(){
 	$(".btn_forms").click(function(){
 		var btn = $(this);
 		var url = location.href +'/'+$(this).attr('data-url')+'/'+$(this).attr('data-solicitud');
+		
+		if( $(this).attr('data-solicitud') == 'crear_solicitud' )
+			$("#modal-footer").addClass('hidden');
+		else
+			$("#modal-footer").removeClass('hidden')
+		//alert(url)
 		var form = $("#modal_forms");
 		var id = btn.attr('data-solicitud');
 		form.modal('show');
@@ -46,4 +52,8 @@ function calcularTotal(event)
 		$("#iva_servicio").val( parseFloat(precio.value) *parseFloat(por_iva.value)  )
 		$("#total").val( parseFloat(precio.value) + ( parseFloat(precio.value) *parseFloat(por_iva.value) ) - parseFloat(abono.value) ); 
 	}
+}
+
+function crear_solicitud(){
+	$("#cargar_info").submit();
 }

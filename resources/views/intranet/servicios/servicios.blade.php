@@ -24,9 +24,9 @@
             	<div class="container">
             		<div class="row">
             			<div class="col-sm-12">
-            				<button class="btn btn-primary btn-forms" formulario="crear_usuario" data-toggle="modal" data-target="#modal_forms">
+            				<button class="btn btn-primary btn_forms" data-url="formulario" data-solicitud="crear_solicitud" >
             					 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Crear
-            				</button>
+            				</button> 
             			</div>
             		</div>
             	</div>
@@ -67,13 +67,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de usuarios <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestion de servicios<span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 
         <div class="container">
             <div class="row">
-                <form action="" method="post" class=""  id="cargar_info">
+                <form action="http://localhost:8000/solicitudes/servicios" method="post" class=""  id="cargar_info">
                     <div id="form-inputs">
                         
                     </div>
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-      <div class="modal-footer">
+      <div class="modal-footer" id="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar ventana</button>
         <button type="button" class="btn btn-primary" id="modal-click">Guardar cambios</button>
       </div>

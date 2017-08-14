@@ -14,7 +14,7 @@ use App\Categoria;
 use App\Stock;
 use Carbon\Carbon;
 use Storage;
-
+use App\Auditoria;
 use Auth;
 
 class Hardware extends Controller
@@ -72,10 +72,21 @@ class Hardware extends Controller
    	public function formularios(Request $request, $formulario)
    	{ 	
         $categorias = Categoria::where('edo_reg', '=', 1)->get();
-        $formulario = \View::make('intranet.inventario.formularios.'.$formulario, [
-                          'categorias' => $categorias,
-                        ])
+
+        if( $formulario != 'actualizar' )
+        {
+          $formulario = \View::make('intranet.inventario.formularios.'.$formulario, [
+                            'categorias' => $categorias,
+                          ])
                         ->render();
+        }
+        else{
+          $datos = [
+            'hardware' => equipos::find($request->hardware_id),
+            'categorias' => $categorias,
+          ];
+          $formulario = \View::make('intranet.inventario.formularios.'.$formulario,$datos)->render();
+        }
 
         return json_encode([
             'fail' => false,
@@ -83,6 +94,23 @@ class Hardware extends Controller
         ]);
    	}
 
+    public function actualizar($request , $id){
+      $actualizacion = equipos::find($request->hardware_id)->update($request->all());
+
+      if(\App\Permiso::check_permisos('DELETE', Auth::user()->id, $this->modulo_id))
+      {
+        if($actualizacion){
+          Auditoria::auditoria('EL USUARIO HA REALIZADO UNA ACCION DE UPDATE SOBRE UN EQUIPO DEL INVENTARIO', $this->modulo_id, Auth::user()->id);
+          return redirect()
+                ->to('http://localhost:8000/dashboard/inventario/Hardware')
+                ->with('actualizado', 'Se ha actualizado el registro de manera correcta');
+        }
+      }
+      return redirect()
+            ->to('http://localhost:8000/dashboard/inventario/Hardware')
+            ->with('error', 'Ha ocurrido un error inesperado durante el proceso de modificación del registro, asegurese de tener los permisos para realizar esta acción');
+        
+    }
 
 
     public function DELETE(Request $request, $id)

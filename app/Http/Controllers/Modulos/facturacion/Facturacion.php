@@ -31,7 +31,7 @@ class Facturacion extends Controller
 	private $mods;
   private $modulo_id;
 	
-	public function __construct($id)
+	public function __construct($id = 0)
 	{
 		$this->mods = modulos::getModulos(Auth::user()->id);
     $this->modulo_id = $id;
@@ -194,8 +194,24 @@ class Facturacion extends Controller
       //FUNCION FACTURA
       
         $servicio = Servicios::find($request->factura_id);
-        $detser = DetalleServicio::getDetalleServicioOn($servicio->id);
-    
+
+        /**
+         * SI LA DENOMINACION DEL TIPO DE SERVICIO ES IGUAL A 'Servicios'
+         * ENTONCES SE CREA UNA INSTANCIA DE LA CLASE FACTURAR DEL MODULO DE SERVICIOS
+         * Y POSTERIORMENTE SE LLAMA EL METODO FACTURA PASANDOLE EL REQUEST
+         * ORIGINAL QUE LLEGA DESDE ESTE MISMO METODO Y EL ID DEL SERVICIO
+         * EL METODO RETORNA UN PDF
+         */
+        
+        if($servicio->tipo_servicio->denominacion == 'Servicios')
+        {
+          $facturaServicio = new \App\Http\Controllers\Modulos\servicios\Facturar(1);
+          return $facturaServicio->factura($request, $servicio->getId());
+        }
+
+        $detser = DetalleServicio::getDetalleServicioOn($servicio->getId() );
+        
+
         $data =  [
           'persona' => $servicio->cliente->persona, 
           'servicio' => $servicio, 

@@ -23,7 +23,7 @@ class ApiController extends Controller
     private function getProductsData(){
     	$producst = [];
     	$i = 0;
-    	foreach (Hardware::all() as $key => $producto) {
+    	foreach (Hardware::where('edo_reg', 1)->get() as $key => $producto) {
     		if($producto->stock)
     		{
     			$products[$i]['producto'] = $producto;
