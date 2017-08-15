@@ -50,21 +50,23 @@ export default class Carrito extends React.Component{
 	}
 
 	renderCarrito(){
-		const items = this.state.carrito.map( (item, indice)=> {
-			console.log(indice)
-			return(
-				<tr>
-					<td>{item.nombre_hardware}</td>
-					<td>{item.codigo_hardware}</td>
-					<td>{item.precio}</td>
-					<td>
-						<Button bsStyle={'danger'} id={indice} onClick={ (e)=> this.removeFromCar(e)} >
-							<Glyphicon glyph="remove-circle" />
-						</Button>  
-					</td>
-				</tr>
-			)
-		})
+		
+			const items = this.state.carrito.map( (item, indice)=> {
+				console.log(indice)
+				return(
+					<tr>
+						<td>{item.nombre_hardware}</td>
+						<td>{item.codigo_hardware}</td>
+						<td>{item.precio}</td>
+						<td>
+							<Button bsStyle={'danger'} id={indice} onClick={ (e)=> this.removeFromCar(e)} >
+								<Glyphicon glyph="remove-circle" />
+							</Button>  
+						</td>
+					</tr>
+				)
+			})
+		
 
 		console.log( this.state.carrito );
 		return items;
@@ -72,10 +74,14 @@ export default class Carrito extends React.Component{
 
 	totalizar(){
 		var total = 0;
-		for(var i = 0; i< this.state.carrito.length; i++){
-			total+= this.state.carrito[i].precio;
+
+		if(this.state.carrito.length > 0)
+		{
+			for(var i = 0; i< this.state.carrito.length; i++){
+				total+= this.state.carrito[i].precio;
+			}
 		}
-		return total;
+		return  total ;
 	}
 
 	removeFromCar = ( position ) =>{

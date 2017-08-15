@@ -10,7 +10,7 @@ class Servicios extends Model
 
     protected $fillable =[
     	'empleado_id', 'tipo_servicio_id', 'servicio_id' ,'iva', 'subtotal', 'total', 'dinero_recibido',
-    	'cambio', 'cliente_id', 'concepto', 'modalidad_pago_id', 'codigo_pago',
+    	'cambio', 'cliente_id', 'concepto', 'modalidad_pago_id', 'codigo_pago', 'solicitud_id'
     ];
 
 

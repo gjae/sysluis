@@ -41,12 +41,9 @@
                                         <button class="btn btn-danger usuario-option delete" token="{{ csrf_token() }}" data-id="{{ $categoria->id }}" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option edit" token="{{ csrf_token() }}" data-id="{{ $categoria->id }}" role="UPDATE">
+                                       <!-- <button class="btn btn-success btn-forms usuario-option edit" formulario="editar_categoria" data-id="{{ $categoria->id }}">
                                             <span class="glyphicon glyphicon-pencil "></span>
-                                        </button>
-                                        <button class="btn btn-warning usuario-option" token="{{ csrf_token() }}" id="permisos" role="PERMISOS" >
-                                            <span class="glyphicon glyphicon-wrench"></span>
-                                        </button>
+                                        </button>-->
                                     </td>
                                 </tr>
                             @endif

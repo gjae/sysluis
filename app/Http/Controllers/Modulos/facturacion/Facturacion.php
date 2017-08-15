@@ -33,7 +33,10 @@ class Facturacion extends Controller
 	
 	public function __construct($id = 0)
 	{
-		$this->mods = modulos::getModulos(Auth::user()->id);
+    if( isset(Auth::user()->id) )
+    {
+		  $this->mods = modulos::getModulos(Auth::user()->id);
+    }
     $this->modulo_id = $id;
 	}
    

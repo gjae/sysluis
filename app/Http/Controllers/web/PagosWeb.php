@@ -15,6 +15,7 @@ use App\TipoServicios;
 use App\Servicios;
 use App\Hardware;
 
+use App\Http\Controllers\Modulos\servicios\modelos\Solicitud;
 use DB;
 use App\DetalleServicio;
 
@@ -107,7 +108,7 @@ class PagosWeb extends Controller
     		DB::rollback();
     		return response([
     			'error' => true,
-    			'mensaje' => "Ha ocurrido un problema al guardar los datos, estamos trabajando para resolverlo"
+    			'mensaje' => "Ha ocurrido un problema al guardar los datos, estamos trabajando para resolverlo ".$e->getMessage()
     		], 200)->header('Content-Type', 'application/json');
 
     	}
@@ -130,37 +131,54 @@ class PagosWeb extends Controller
     	$iva = 0.00;
         $iva = $total*env('IVA', '0.12');
 
-        $servicio = Servicios::create( [
+        $solicitud = Solicitud::create([
+          'codigo_solicitud' => '01',
+          'precio' => $total,
+          'cliente_id' => $cliente->id,
+          'abono' => 0.00,
+          'iva' => $total+( $total*env('IVA', '0.12') ),
+          'detalles' => 'COMPRA DE BIENES Y/O SUMINISTROS',
+          'categoria_id' => 1,
+          'tipo_id' => 1,
+          'estatus_id' => 5,
+        ]);
+
+        $servicio = new Servicios( [
           'tipo_servicio_id'=>1, 
           'empleado_id' => 1,
           'cliente_id' => $cliente->id,
           'modalidad_pago_id' => 2,
           'iva' =>  $iva,
           'subtotal' => $total,
-          'total' => $total+( $total*env('IVA', '0.12') )
+          'total' => $total+( $total*env('IVA', '0.12') ),
+          'solicitud_id' => $solicitud->id,
         ] );
-		$ds = [];
 
-		foreach($productos as $key => $producto){
+        $servicio->save();
 
-      for($i = 0; $i<count($articulos); $i++)
-      {
-        if($articulos[$i] == $producto->codigo_hardware)
-        {
-          $servicio->detalle_servicio()->save(
-              new DetalleServicio([
-              'hardware_id' => $producto->id,
-              'precio_hardware' => $producto->precio
-            ])
-          );          
-        }
-      }
+    		$ds = [];
 
-		}
+    		foreach($productos as $key => $producto){
+
+          for($i = 0; $i<count($articulos); $i++)
+          {
+            if($articulos[$i] == $producto->codigo_hardware)
+            {
+              $servicio->detalle_servicio()->save(
+                  new DetalleServicio([
+                  'hardware_id' => $producto->id,
+                  'precio_hardware' => $producto->precio
+                ])
+              );          
+            }
+          }
+
+    		}
+
+        return $servicio;
+    
 
 		
-
-		return $servicio;
 
     }
 

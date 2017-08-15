@@ -23,6 +23,7 @@ $(document).ready(function() {
             var url = location.href+'/formularios/'+dataForms;
 
             url += ( id != undefined ) ? '?hardware_id='+id : '';
+            
 
             $("#verificando").html('<div class="loader"></div>');
             $.getJSON(url, '', function(response){

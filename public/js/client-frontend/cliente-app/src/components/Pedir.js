@@ -42,6 +42,11 @@ export default class Pedir extends Component{
 		})
 
 		let formulario = $("#guardar").serialize()
+		if( formulario.indexOf('=&') != -1){
+			alert("APARENTEMENTE AUN TIENES CAMPOS SIN COMPLETAR; DEBES LLENAR TODO EL FORMULARIO PARA PODER CONTINUAR CON LA OPERACION");
+			return false;
+		}
+
 		let productos = reactLocalStorage.getObject('carrito')
 
 		var articulos = [];
@@ -51,11 +56,11 @@ export default class Pedir extends Component{
 			articulos[i] = productos[i].codigo_hardware 
 		}
 
-		console.log(articulos);
 		$.post('http://localhost:8000/solicitudes/pagar?articulos='+articulos, formulario, function(e){
 			alert(e.mensaje)
 			if(! e.error){
-				reactLocalStorage.setObject('carrito', { carrito: [] })
+				productos = new Array();
+				reactLocalStorage.setObject('carrito', productos)
 				window.location.href = e.consultar
 			}
 		})

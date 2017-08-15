@@ -31,6 +31,19 @@ class Categorias extends Controller
     	return view('intranet.inventario.categorias', ['modulos' => $this->mods, 'categorias' => Categoria::all()]);
     }
 
+    public function formularios($request, $form){
+        $categoria = Categoria::find($request->hardware_id);
+
+        if($categoria)
+        {
+            $vista = \View::make('intranet.inventario.formularios.'.$form, ['categoria' => $categoria])->render();
+
+            return response( ['error' => false, 'formulario' => $vista], 200 )
+                    ->header('Content-type', 'application/json');
+        }
+
+    }
+
     public function guardar(Request $request, $id)
     {
     	if(\App\Permiso::check_permisos('CREATE', Auth::user()->id, $this->modulo_id))

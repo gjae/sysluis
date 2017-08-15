@@ -17,6 +17,7 @@ use App\Cliente;
 use App\Servicios;
 use App\TipoServicio;
 use App\DetalleServicio;
+use App\Empresa;
 
 
 use PDF;
@@ -60,6 +61,7 @@ class Reportes extends Controller
 		$data = [
 			'facturas' => $servicios,
 			'persona'  => Auth::user()->empleado->persona,
+			'empresa' =>  Empresa::first()
 		];
 		$pdf = PDF::loadView('pdf.reporte_enTiempo', $data);
 
