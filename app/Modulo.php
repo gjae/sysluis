@@ -25,6 +25,7 @@ class Modulo extends Model
     }
 
     public static function getProgramas($modulo_id){
-        return Programa::where('modulo_id', $modulo_id)->get();
+        return Programa::where('modulo_id', $modulo_id)
+                    ->where('edo_reg', 1)->get();
     }
 }

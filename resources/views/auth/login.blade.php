@@ -51,11 +51,6 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Recordarme">Remember Me
-                                    </label>
-                                </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" class="btn btn-lg btn-success btn-block">Ingresar</button>
                             </fieldset>

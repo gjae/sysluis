@@ -96,7 +96,7 @@
 
                         <li>
                             <a href="{{ url('dashboard') }}">
-                                <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                                <i class="fa fa-dashboard fa-fw"></i> Estadisticas personales
                             </a>
                         </li>
                         @foreach($modulos as $modulo)
