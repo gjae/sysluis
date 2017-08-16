@@ -73,7 +73,7 @@
 
         <div class="container">
             <div class="row">
-                <form action="http://localhost:8000/solicitudes/servicios" method="post" class=""  id="cargar_info">
+                <form action="http://localhost:8000/solicitudes/servicios" method="post" class="" id="cargar_info">
                     <div id="form-inputs">
                         
                     </div>

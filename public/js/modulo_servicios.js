@@ -61,6 +61,8 @@ function calcularTotal(event)
 	}
 }
 
-function crear_solicitud(){
-	$("#cargar_info").submit();
+function crear_solicitud(event, form){
+	event.preventDefault();
+	alert("izzi")
+	//$("#cargar_info").submit();
 }

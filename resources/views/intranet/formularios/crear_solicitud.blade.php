@@ -30,7 +30,7 @@
 								<label for="telefono">Telefono personal</label>
 								<input type="text" required name="telefono_personal" class="form-control" />
 							</div>
-							<div class="col-sm-12 col-md-5 col-lg-6">
+							<div class="col-sm-12 col-md-3 col-lg-3">
 								<label for="telefono">Telefono de contacto</label>
 								<input type="text" required name="telefono_habitacion" class="form-control" />
 							</div>
@@ -42,39 +42,45 @@
 							</div>
 							<div class="col-sm-6">
 								<label for="tipo_servicio">Tipo de servicio solicitado</label>
-								<select name="tipo_id" id="" class="form-control">
-									@foreach($tiposervicio as $tipo)
-										<option value="{{ $tipo->id }}">
-											{{ $tipo->denominacion }}
-										</option>
+								<select name="tipo_id"  required id="" class="form-control">
+									<option value="">-----</option>
+									@foreach($tiposervicio as $key => $tipo)
+										@if( $key > 0)
+											<option value="{{ $tipo->id }}">
+												{{ $tipo->denominacion }}
+											</option>
+										@endif
 									@endforeach
 								</select>
 							</div>
 
 							<div class="col-sm-5">
 								<label for="tipo_servicio">Categoria del servicio</label>
-								<select name="categoria_id" id="" class="form-control">
-									@foreach($categorias as $categoria)
-										<option value="{{ $categoria->id }}">
-											{{ $categoria->nombre_categoria }}
-										</option>
+								<select name="categoria_id" required id="" class="form-control">
+									<option value="">----------</option>
+									@foreach($categorias as $key => $categoria)
+										
+											<option value="{{ $categoria->id }}">
+												{{ $categoria->nombre_categoria }}
+											</option>
+										
 									@endforeach
 								</select>
 							</div>
 							<div class="row">
 								<div class="col-sm-11">
 									<label for="direccion">Dirección</label>
-									<textarea name="direccion" id="direccion" class="form-control" cols="30" rows="10"></textarea>
+									<textarea name="direccion" required id="direccion" class="form-control" cols="30" rows="10"></textarea>
 								</div>
 								<div class="col-sm-11">
 									<label for="direccion">Explique aquí brevemente su problema</label>
-									<textarea name="detalles" id="detalles" class="form-control" cols="30" rows="10"></textarea>
+									<textarea name="detalles" required id="detalles" class="form-control" cols="30" rows="10"></textarea>
 								</div>
 							</div>
 						</div>
 						<br />
 						<div class="row" >
-							<a onClick="crear_solicitud()" class="btn btn-primary btn-lg">Guardar</a>
+							<button type="submit" class="btn btn-primary btn-lg">Guardar</a>
 						</div>
 					</form>
 				</div>
