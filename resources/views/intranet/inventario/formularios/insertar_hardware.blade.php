@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		
-		<form action="{{ url('dashboard/inventario/Hardware/guardar') }}" enctype="multipart/form-data" method="post" data-url="guardar">
+		<form action="{{ url('dashboard/inventario/Hardware/guardar') }}" enctype="multipart/form-data" method="post" data-url="guardar" onsubmit="cargarDatos(event, this)">
 			{{ csrf_field() }}
 			<div class="container">
 				<div class="row">
@@ -28,7 +28,7 @@
 						
 						<label for="proveedor">Categoria del producto</label>
 						<select name="categoria_id" id="categoria_id" class="form-control">
-							<option value="0">-----------------</option>
+							<option value="">-----------------</option>
 							@foreach($categorias as $categoria)
 								<option value="{{ $categoria->id }}">{{ $categoria->nombre_categoria }}</option>
 							@endforeach

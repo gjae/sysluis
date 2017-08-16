@@ -91,7 +91,7 @@
 <!-- INICIO DEL JAVASCRIPT -->
 @endsection
 @section('jquery')
-<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.js') }}"></script>
 <script src=" {{ asset('js/dataTables.bootstrap.min.js') }} "></script>
 <script src="{{ asset('js/dataTables.responsive.js')  }}"></script>
 <script>

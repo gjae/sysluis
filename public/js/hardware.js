@@ -75,3 +75,21 @@ $(document).ready(function() {
         });
 });
 
+function cargarDatos(event, form){
+    event.preventDefault();
+    var datos = [
+        'nombre_hardware', 'codigo_hardware', 'imagen', 'categoria_id', 'precio'
+    ];
+    
+    var i = 0;
+    var input = "";
+    for(i = 0; i < datos.length; i++){
+        input = "form."+datos[i]+".value";
+
+        if( eval(input) == "" ){
+            alert("USTED AUN TIENE ALGUN CAMPO POR COMPLETAR EN EL FORMULARIO, NO PUEDE CONTINUAR SIN TENER COMPLETADO EL FORMULARIO")
+            return false;
+        }
+    }
+    form.submit()
+}
