@@ -28,8 +28,15 @@ $(document).ready(function(){
 
 	$("#modal-click").click(function(){
 		var datos = $("#cargar_info").serialize();
+		var form = document.getElementById("cargar_info")
 		var url = location.href +'/'+$("#accion").val();
 		
+	
+		if( form.total.value =="" || form.precio.value == 0){
+			alert("Usted aun posee campos del formulario por completar");
+			return false;
+		}
+
 		if(confirm('¿Esta seguro de realizar esta operacion?'))
 		{
 			$.post(url, datos, function(response){

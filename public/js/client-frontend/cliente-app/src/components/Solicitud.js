@@ -110,25 +110,25 @@ export default class Solicitud extends React.Component{
 							</div>
 							<div className="col-sm-6">
 								<label for="tipo_servicio">Tipo de servicio solicitado</label>
-								<select name="tipo_id" id="" className="form-control">
+								<select name="tipo_id" id="" required className="form-control">
 									{this.renderTipos()}
 								</select>
 							</div>
 
 							<div className="col-sm-5">
 								<label for="tipo_servicio">Categoria del servicio</label>
-								<select name="categoria_id" id="" className="form-control">
+								<select name="categoria_id" id="" required className="form-control">
 									{this.renderCategorias()}
 								</select>
 							</div>
 							<div className="row">
 								<div className="col-sm-11">
 									<label for="direccion">Dirección</label>
-									<textarea name="direccion" id="direccion" className="form-control" cols="30" rows="10"></textarea>
+									<textarea name="direccion" id="direccion" required className="form-control" cols="30" rows="10"></textarea>
 								</div>
 								<div className="col-sm-11">
 									<label for="direccion">Explique aquí brevemente su problema</label>
-									<textarea name="detalles" id="detalles" className="form-control" cols="30" rows="10"></textarea>
+									<textarea name="detalles" id="detalles" required className="form-control" cols="30" rows="10"></textarea>
 								</div>
 							</div>
 						</div>
