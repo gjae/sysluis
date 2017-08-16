@@ -24,7 +24,7 @@ class ApiController extends Controller
     	$producst = [];
     	$i = 0;
     	foreach (Hardware::where('edo_reg', 1)->get() as $key => $producto) {
-    		if($producto->stock)
+    		if($producto->stock && $producto->stock->stock > 0)
     		{
     			$products[$i]['producto'] = $producto;
     			$products[$i]['categoria'] = $producto->categoria;
