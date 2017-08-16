@@ -48,6 +48,17 @@
 		</div>
 
 	</div>
-
+	<div class="row">
+		<div class="col-sm-10">
+			<label for="">Clave (Puede usarse para reiniciar la clave)</label>
+			<input type="password" id="password" name="password" class="form-control">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10">
+			<label for="">Repita la clave</label>
+			<input type="password" name="password2" id="password-repeat" class="form-control">
+		</div>
+	</div>
 	<input type="hidden" id="accion" value="editar">
 </div>

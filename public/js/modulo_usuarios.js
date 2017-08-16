@@ -90,7 +90,7 @@ $(document).ready(function() {
                     alert("Las contraseñas deben coinsidir y no estar vacias");
                     return false;
                 }
-                else if(document.getElementById('usuario').value == '')
+                if( document.getElementById('usuario') != null && document.getElementById('usuario').value == '')
                 {
                     alert("Debe completar el campo de nombre de usuario");
                     return false;
