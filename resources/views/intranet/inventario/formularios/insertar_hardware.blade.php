@@ -41,7 +41,7 @@
 					
 					<div class="col-sm-2">
 						<label for="precio">Precio</label>
-						<input type="number" name="precio" class="form-control">
+						<input type="number" name="precio" onkeyup="validarPrecio(event, this)" class="form-control">
 					</div>
 
 				</div>

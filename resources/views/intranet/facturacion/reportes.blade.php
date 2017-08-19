@@ -68,11 +68,31 @@
 		});
 
 	})
+function validarFormatoFecha(evento, input, returned = false){
+    if (  input.value.length != 10 || !(/^(\d{4})-(\d{2})-(\d{2})$/.test(input.value) )  ){
+        alert('FORMATO DE FECHA INVALIDA')
+        if(returned)
+            return false;
+    }   
+    if (returned)
+        return true
+}
 
-function generar(event)
+function generar(event, param)
 {
 	var datos = $('#reportes').serialize();
 	var action = $('#action').val()
+
+	var arreglo = param.split('%')
+
+	var i = 0;
+	var k = arreglo.length
+
+	for(i = 0; i < k; i++){
+		if( !validarFormatoFecha(event, document.getElementById(arreglo[i]), true) ) 
+			return false;
+	}	
+
 	var respuestAjax = function(response){
 		alert(response)
 	}

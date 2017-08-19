@@ -16,13 +16,10 @@
 		</div>
 		@foreach($asignaciones as $asignacion)
 		<div class="col-sm-3">
-            <div class="panel panel-green">
+            <div class="panel panel-{{$colores[ strtolower($asignacion->nombre_estatus) ]}}">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
+                        <div class="col-xs-5 text-right">
                             <div class="huge">{{ $asignacion->asignaciones }}</div>
                             <div>{{ $asignacion->nombre_estatus }}S</div>
                         </div>

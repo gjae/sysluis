@@ -87,7 +87,16 @@ $(document).ready(function() {
                 var password = document.getElementById('password').value;
                 var password2 = document.getElementById('password-repeat').value;
                 if((password != password2) || (password2=='' || password=='') ){
-                    alert("Las contraseñas deben coinsidir y no estar vacias");
+                    alert("Las contraseñas deben coincidir y no estar vacias");
+                    return false;
+                }
+                if( !(password.length >= 8 && password.length <= 16) )
+                {
+                    alert("LA CLAVE DEBE TENER ENTRE 8 Y 16 DIGITOS");
+                    return false;
+                }
+                if( /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test( document.getElementById("email").value ) ){
+                    alert("CORREO ELECTRONICO NO VALIDO");
                     return false;
                 }
                 if( document.getElementById('usuario') != null && document.getElementById('usuario').value == '')
@@ -95,6 +104,8 @@ $(document).ready(function() {
                     alert("Debe completar el campo de nombre de usuario");
                     return false;
                 }
+
+
             }
 
             var formulario = $("#cargar_info");
@@ -162,4 +173,16 @@ $(document).ready(function() {
             }
             $("#verificando").html("");
         });
+    }
+
+    function longitudClave(evento, input){
+        if(input.value.length > 16 ){
+            alert("La clave no puede superar los 16 digitos de longitud");
+            input.value = input.value.substring(0, (input.value.length - 1))
+        }
+    }
+
+    function validarCorreo(evento, input){
+
+
     }

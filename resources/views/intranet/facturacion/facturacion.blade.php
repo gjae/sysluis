@@ -22,11 +22,11 @@
 				<input type="hidden" name="cliente_id" id="cliente_id">
 				<div class="row">
 					<div class="col-sm-5 ">
-						<label for="cedula">Cedula</label>
-						<input type="text" name="cedula" onChange="limpiarDatos(event)" id="cedula" onKeypress="buscarDatos(event, this.value)" class="form-control col-sm-3 ced-factura">
+						<label for="cedula">Cedula o rif</label>
+						<input type="text" name="cedula" onKeyUp="validarCedula('cedula', 10)" onChange="limpiarDatos(event)" id="cedula" onKeypress="buscarDatos(event, this.value)" class="form-control col-sm-3 ced-factura">
 					</div>
 					<div class="col-sm-5 pull-right">
-						<label for="cedula">Nombres</label>
+						<label for="cedula">Nombres o razón social</label>
 						<input type="text" name="nombre" disabled id="nombre" class="form-control col-sm-3 ced-factura">
 					</div>
 				</div>
@@ -95,15 +95,15 @@
             <div class="row">
                 <form action="" method="post" class=""  id="cargar_info">
                     {{ csrf_field() }}
-                    <div class="container">
+                    <div class="container center">
                     	<div class="row">
                     		<div class="col-sm-3">
                     			<label for="nombres">Nombre(s) de la persona</label>
-                    			<input type="text" name="nombres" id="nombres" class="form-control">
+                    			<input type="text" onKeyUp="soloTexto(event, this)"  name="nombres" id="nombres" class="form-control">
                     		</div>
                     		<div class="col-sm-4">
                     			<label for="apellidos">Apellido(s) de la persona</label>
-                    			<input type="text" name="apellidos" id="apellidos" class="form-control">
+                    			<input type="text" onKeyUp="soloTexto(event, this)" name="apellidos" id="apellidos" class="form-control">
                     		</div>
                     	</div>
                     	<div class="row">
@@ -113,13 +113,22 @@
                     		</div>
                     	</div>
                     	<div class="row">
+                    		<div class="col-sm-7">
+                    			<label for="email">Tipo de persona</label>
+                    			<select class="form-control" name='tipo_persona'>
+                    				<option value="N">Natural</option>
+                    				<option value="J">Juridica</option>
+                    			</select>
+                    		</div>
+                    	</div>
+                    	<div class="row">
                     		<div class="col-sm-3">
                     			<label for="telefono_personal">Telefono personal</label>
-                    			<input type="text" name="telefono_personal" id="telefono_personal" class="form-control">
+                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="telefono_personal" id="telefono_personal" class="form-control">
                     		</div>
                     		<div class="col-sm-4">
                     			<label for="telefono_habitacion">Telefono de habitación</label>
-                    			<input type="text" name="telefono_habitacion" id="telefono_habitacion" class="form-control">
+                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="telefono_habitacion" id="telefono_habitacion" class="form-control">
                     		</div>
                     	</div>
                     	<div class="row">

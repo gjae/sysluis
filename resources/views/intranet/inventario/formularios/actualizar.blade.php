@@ -52,7 +52,7 @@
 					
 					<div class="col-sm-2">
 						<label for="precio">Precio</label>
-						<input type="number" value="{{ $hardware->precio }}" name="precio" class="form-control">
+						<input type="number" onkeyup="validarPrecio(event, this)" value="{{ $hardware->precio }}" name="precio" class="form-control">
 					</div>
 
 				</div>

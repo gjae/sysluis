@@ -16,7 +16,7 @@
 			<form id="comprador">
 
 				<div class="input-group">
-					<input type="text" name="cedula" id="cedula" class="form-control">
+					<input type="text" onKeyUp="validarCedula('cedula', 11)"  name="cedula" id="cedula" class="form-control">
 					<span class="input-group-btn">
 						<button class="btn btn-success" id="buscar">Buscar</button>
 					</span>

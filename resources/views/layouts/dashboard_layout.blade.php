@@ -54,15 +54,10 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-cog"></span>
+                       Opciones <span class="glyphicon glyphicon-cog"></span> 
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
@@ -96,7 +91,7 @@
 
                         <li>
                             <a href="{{ url('dashboard') }}">
-                                <i class="fa fa-dashboard fa-fw"></i> Estadisticas personales
+                                 Estadisticas personales
                             </a>
                         </li>
                         @foreach($modulos as $modulo)
@@ -153,6 +148,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('js/sb-admin-2.js') }}"></script>
+
+    <script src="{{ asset('js/funciones.js') }}"></script>
 
     @section('jquery')
     @show

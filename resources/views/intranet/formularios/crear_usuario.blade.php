@@ -2,30 +2,30 @@
 <div class="container">
 
 	<div class="row">
-		<div class="col-sm-7">
+		<div class="col-sm-7 pull-col-md-3">
 			<h4 class="page-header">Datos de la persona</h4>
 		</div>
 	</div>
 	
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="col-sm-3 push-col-md-2">
 			<label for="nombres">Nombre(s) del usuario</label>
-			<input type="text" id="nombres" class="form-control" name="nombres">
+			<input type="text" id="nombres" onKeyUp="soloTexto(event, this)" class="form-control" name="nombres">
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 push-col-md-2">
 			<label for="nombres">Apellido(s) del usuario</label>
-			<input type="text" id="apellidos" class="form-control" name="apellidos">
+			<input type="text" id="apellidos" onKeyUp="soloTexto(event, this)"  class="form-control" name="apellidos">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-3">
 			<label for="correo">Telefono personal</label>
-			<input type="text" id="telefono_personal" class="form-control" name="telefono_personal">
+			<input type="text" id="telefono_personal" onKeyUp="soloNumeros(event, this, 15)" class="form-control" name="telefono_personal">
 		</div>
 
 		<div class="col-sm-3">
 			<label for="correo">Telefono de habitación</label>
-			<input type="text" id="telefono_habitacion" class="form-control" name="telefono_habitacion">
+			<input type="text" id="telefono_habitacion" onKeyUp="soloNumeros(event, this, 15)" class="form-control" name="telefono_habitacion">
 		</div>
 	</div>
 	<div class="row">
@@ -50,11 +50,11 @@
 		<div class="row">
 			<div class="col-sm-3">
 				<label for="password">Clave del usuario</label>
-				<input type="password" class="form-control" id="password" name="password">
+				<input type="password" onKeyUp="longitudClave(event, this)"  class="form-control" id="password" name="password">
 			</div>
 			<div class="col-sm-3">
 				<label for="password-repeat">Repita la clave</label>
-				<input type="password" class="form-control" id="password-repeat" name="password2">
+				<input type="password"  onKeyUp="longitudClave(event, this)" class="form-control" id="password-repeat" name="password2">
 			</div>
 		</div>
 	</div>

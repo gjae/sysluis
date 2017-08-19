@@ -42,9 +42,17 @@ class Dashboard extends Controller
     public function index()
     {
         $asignaciones = Asignacion::getAsignaciones(Auth::user()->empleado->id);
+        $colores = [
+            'anulado' => 'red',
+            'facturado' => 'blue',
+            'listo' => 'green',
+            'asignado' => 'blue',
+            'pendiente' => 'orange',
+        ];
     	return view('intranet.dashboard', [
             'modulos' => $this->mods,
             'asignaciones' => $asignaciones,
+            'colores' => $colores,
         ]);
     }
 

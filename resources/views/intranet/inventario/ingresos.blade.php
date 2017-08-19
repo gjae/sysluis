@@ -45,11 +45,11 @@
 							
 							<div class="col-sm-2">
 								<label for="iva">Porcentaje de IVA</label>
-								<input type="number" required name="iva" id="iva" class="form-control">
+								<input type="number" onkeyup="validarPrecio(event, this)" required name="iva" id="iva" class="form-control">
 							</div>	
 							<div class="col-sm-3">
 								<label for="precio_unitario">Precio unitario</label>
-								<input type="text" name="precio_unitario" id="precio_unitario" class="form-control">
+								<input type="text" name="precio_unitario" onkeyup="validarPrecio(event, this)" id="precio_unitario" class="form-control">
 							</div>
 
 						</div>

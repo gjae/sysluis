@@ -20,15 +20,15 @@
 	<div class="row">
 		<div class="col-sm-3">
 			<label for="total">Total del trabajo (en Bs)</label>
-			<input type="number" name="precio" id="precio" value="0" class="form-control" onkeypress="calcularTotal(event)">
+			<input type="number"  onkeyup="validarPrecio(event, this)" name="precio" id="precio" value="0" class="form-control" onkeypress="calcularTotal(event)">
 		</div>
 		<div class="col-sm-3">
 			<label for="abono">Cantidad abonada (en Bs)</label>
-			<input type="number" name="abono" value="0" id="abono" class="form-control" onkeypress="calcularTotal(event)">
+			<input type="number" name="abono" onkeyup="validarPrecio(event, this)" value="0" id="abono" class="form-control" onkeypress="calcularTotal(event)">
 		</div>
 		<div class="col-sm-3">
 			<label for="iva_servicio">Total</label>
-			<input type="number" name="total" id="total" class="form-control">
+			<input type="number" onkeyup="validarPrecio(event, this)" name="total" id="total" class="form-control">
 		</div>
 	</div>
 

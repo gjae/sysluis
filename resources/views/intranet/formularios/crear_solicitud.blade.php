@@ -9,15 +9,15 @@
 							</div>
 							<div class="col-sm-11">
 								<label for="cedula">Cedula</label>
-								<input type="text" required name="cedula" id="cedula" class="form-control" />
+								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" id="cedula" class="form-control" />
 							</div>
 							<div class="col-sm-4">
-								<label for="nombres">nombres</label>
-								<input type="text" required name="nombres" id="nombres" class="form-control" />
+								<label for="nombres">Mombres</label>
+								<input type="text" required name="nombres"  onkeyup="soloTexto(event, this)" id="nombres" class="form-control" />
 							</div>
 							<div class="col-sm-4">
-								<label for="apellidos">apellidos</label>
-								<input type="text" required name="apellidos" id="apellidos" class="form-control" />
+								<label for="apellidos">Apellidos</label>
+								<input type="text" required name="apellidos" onkeyup="soloTexto(event, this)"  id="apellidos" class="form-control" />
 							</div>
 
 							<div class="col-sm-3">
@@ -28,11 +28,11 @@
 						<div class="row">
 							<div class="col-sm-12 col-md-6 col-lg-6">
 								<label for="telefono">Telefono personal</label>
-								<input type="text" required name="telefono_personal" class="form-control" />
+								<input type="text" required onkeyup="soloNumeros(event, this, 15)" name="telefono_personal" class="form-control" />
 							</div>
-							<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="col-sm-12 col-md-5 col-lg-5">
 								<label for="telefono">Telefono de contacto</label>
-								<input type="text" required name="telefono_habitacion" class="form-control" />
+								<input type="text" required onkeyup="soloNumeros(event, this, 15)" name="telefono_habitacion" class="form-control" />
 							</div>
 						</div>
 						<div class="row">

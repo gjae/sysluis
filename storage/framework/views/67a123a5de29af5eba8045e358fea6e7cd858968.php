@@ -55,15 +55,10 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-cog"></span>
+                       Opciones <span class="glyphicon glyphicon-cog"></span> 
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
@@ -97,7 +92,7 @@
 
                         <li>
                             <a href="<?php echo e(url('dashboard')); ?>">
-                                <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                                 Estadisticas personales
                             </a>
                         </li>
                         <?php foreach($modulos as $modulo): ?>
@@ -154,6 +149,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo e(asset('js/sb-admin-2.js')); ?>"></script>
+
+    <script src="<?php echo e(asset('js/funciones.js')); ?>"></script>
 
     <?php $__env->startSection('jquery'); ?>
     <?php echo $__env->yieldSection(); ?>

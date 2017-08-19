@@ -20,6 +20,7 @@ class CreatePersonaTable extends Migration
             $table->string('email');
             $table->text('direccion');
             $table->string('cedula', 20);
+            $table->enum('tipo_persona', ['N', 'J'])->default('N');
             $table->string('telefono_personal');
             $table->string('telefono_habitacion');
             $table->tinyInteger('edo_reg')->default(1);

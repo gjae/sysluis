@@ -39,12 +39,9 @@
                                         <button class="btn btn-danger usuario-option delete" token="<?php echo e(csrf_token()); ?>" data-id="<?php echo e($categoria->id); ?>" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option edit" token="<?php echo e(csrf_token()); ?>" data-id="<?php echo e($categoria->id); ?>" role="UPDATE">
+                                       <!-- <button class="btn btn-success btn-forms usuario-option edit" formulario="editar_categoria" data-id="<?php echo e($categoria->id); ?>">
                                             <span class="glyphicon glyphicon-pencil "></span>
-                                        </button>
-                                        <button class="btn btn-warning usuario-option" token="<?php echo e(csrf_token()); ?>" id="permisos" role="PERMISOS" >
-                                            <span class="glyphicon glyphicon-wrench"></span>
-                                        </button>
+                                        </button>-->
                                     </td>
                                 </tr>
                             <?php endif; ?>
@@ -106,7 +103,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('jquery'); ?>
-<script src="<?php echo e(asset('js/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/jquery.dataTables.js')); ?>"></script>
 <script src=" <?php echo e(asset('js/dataTables.bootstrap.min.js')); ?> "></script>
 <script src="<?php echo e(asset('js/dataTables.responsive.js')); ?>"></script>
 

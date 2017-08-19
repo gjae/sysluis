@@ -12,7 +12,17 @@
 <?php $__env->startSection('contenedor'); ?>
 
 <div class="container-fluid">
+ 
     <div class="row">
+       <?php if(Session::has('actualizado')): ?>
+            <alert class="alert alert-success col-sm-11 col-lg-11"><?php echo e(Session::get('actualizado')); ?></alert>
+            <?php elseif(Session::has('error')): ?>
+                <alert class="alert alert-danger col-sm-11 col-lg-11">
+                    <?php echo e(Session::get('error')); ?>
+
+                </alert>
+        <?php endif; ?>
+
         <div class="col-lg-12">
             <h1 class="page-header">Stock de mercancía a la fecha</h1>
                     <div class="panel panel-primary">
@@ -55,11 +65,8 @@
                                         <button class="btn btn-danger usuario-option delete" token="<?php echo e(csrf_token()); ?>" data-id="<?php echo e($hardware->id); ?>" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>
                                         </button>
-                                        <button class="btn btn-success usuario-option" token="<?php echo e(csrf_token()); ?>" role="UPDATE">
+                                        <button class="btn btn-success btn-forms" token="<?php echo e(csrf_token()); ?>" formulario="actualizar" data-id="<?php echo e($hardware->id); ?>" >
                                             <span class="glyphicon glyphicon-pencil "></span>
-                                        </button>
-                                        <button class="btn btn-warning usuario-option" token="<?php echo e(csrf_token()); ?>" id="permisos" role="PERMISOS" >
-                                            <span class="glyphicon glyphicon-wrench"></span>
                                         </button>
                                     </td>
                                 </tr>
@@ -82,7 +89,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de usuarios <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestion de inventario<span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 
@@ -109,7 +116,7 @@
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('jquery'); ?>
-<script src="<?php echo e(asset('js/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/jquery.dataTables.js')); ?>"></script>
 <script src=" <?php echo e(asset('js/dataTables.bootstrap.min.js')); ?> "></script>
 <script src="<?php echo e(asset('js/dataTables.responsive.js')); ?>"></script>
 

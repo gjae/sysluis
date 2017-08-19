@@ -17,3 +17,15 @@
     margin: 30px auto;
     border-radius: 0px;
 }
+
+.panel-blue {
+    border-color: #449bf0;
+    color: white;
+    background-color: #449bf0;
+}
+
+.panel-orange {
+    border-color: #ffcb70;
+    color: white;
+    background-color: #ffcb70;
+}

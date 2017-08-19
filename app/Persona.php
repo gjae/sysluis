@@ -10,7 +10,7 @@ class Persona extends Model
 
    protected $fillable = [
    		'nombres', 'apellidos', 'email', 'direccion', 
-   		'cedula', 'telefono_personal', 'telefono_habitacion'
+   		'cedula', 'telefono_personal', 'telefono_habitacion', 'tipo_persona'
    ];
 
    public function empleado()

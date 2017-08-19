@@ -105,7 +105,7 @@
                             <center>
                                 <label for="cedula" id="labele">Cedula de la persona<span id="verificando" class=""></span></label>
 
-                                <input class="form-control" type="text" id="cedula" name="cedula" required placeholder="Ej. 11111111"> 
+                                <input class="form-control" onKeyUp="soloNumeros(event, this, 10)" type="text" id="cedula" name="cedula" required placeholder="Ej. 11111111"> 
                                 
                             </center>
                         </div>

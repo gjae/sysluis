@@ -1,26 +1,29 @@
 var ins = 0;
 var formulario = $("#formulario_facturas").html();
+
 function buscarDatos(evento, cedula){
 	
 	var url = location.href;
 
-	if(evento.keyCode == 13)
+	if(evento.keyCode == 13 )
 	{
-		evento.preventDefault();
-		$.getJSON(url+'/verificarCliente/'+cedula, '', function(response){
-			if(! response.fail)
-			{
-			 	$("#nombre").attr('value', response.nombres);
-			 	$("#persona_id").attr('value', response.persona_id);
-			 	$("#cliente_id").attr('value', response.cliente_id);
-			 	$("#codigo_hardware").focus();
-			}
-			else
-			{ 
-				var modal = $("#modal_forms");
-				modal.modal('show');
-			}
-		})
+
+			evento.preventDefault();
+			$.getJSON(url+'/verificarCliente/'+cedula, '', function(response){
+				if(! response.fail)
+				{
+				 	$("#nombre").attr('value', response.nombres);
+				 	$("#persona_id").attr('value', response.persona_id);
+				 	$("#cliente_id").attr('value', response.cliente_id);
+				 	$("#codigo_hardware").focus();
+				}
+				else
+				{ 
+					var modal = $("#modal_forms");
+					modal.modal('show');
+				}
+			})
+		
 	}
 }
 
@@ -87,6 +90,21 @@ function codigo(evento, codigo_hardware){
 	//$("#productos_lista").focus();
 }
 
+    function soloTexto(evento, input){
+       // alert("input")
+        if( ( /\d|\u00C0|\u017F|[`~!@#$%^&*()_°¬|+\-=?;:'",.<>\{\}\[\]\\\/]/.test(input.value) ) ){
+            alert("EL NOMBRE DE UNA PERSONA NO PUEDE CONTENER SIMBOLOS ESPECIALES NI NÚMEROS")
+            input.value = input.value.substring(0 , (input.value.length - 1) )
+        }
+    }
+
+    function soloNumeros(evento, input, longitud){
+
+        if( !(/^[0-9]/.test( input.value )) || input.value.length > longitud ){
+            alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+            input.value = input.value.substring(0 , (input.value.length - 1) )
+        }
+    }
 
 function stop(evento, cant)
 {	

@@ -11,7 +11,7 @@
 		<div class="col-sm-12 col-xs-12 col-md-3 col-lg-3">
 			
 			<label for="">Numero de factura</label>
-			<input type="text" id="factura_id" placeholder="Ingresa el numero de factura y presione la tecla [ENTER]" name="factura_id" class="form-control">
+			<input type="text" id="factura_id" onkeyup="soloNumeros(event, this, 9)" placeholder="Ingresa el numero de factura y presione la tecla [ENTER]" name="factura_id" class="form-control">
 			<blockquote>
 				Ingrese el numero de la factura a consultar y presione enter
 			</blockquote>

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		
-		<form action="<?php echo e(url('dashboard/inventario/Hardware/guardar')); ?>" enctype="multipart/form-data" method="post" data-url="guardar">
+		<form action="<?php echo e(url('dashboard/inventario/Hardware/guardar')); ?>" enctype="multipart/form-data" method="post" data-url="guardar" onsubmit="cargarDatos(event, this)">
 			<?php echo e(csrf_field()); ?>
 
 			<div class="container">
@@ -29,7 +29,7 @@
 						
 						<label for="proveedor">Categoria del producto</label>
 						<select name="categoria_id" id="categoria_id" class="form-control">
-							<option value="0">-----------------</option>
+							<option value="">-----------------</option>
 							<?php foreach($categorias as $categoria): ?>
 								<option value="<?php echo e($categoria->id); ?>"><?php echo e($categoria->nombre_categoria); ?></option>
 							<?php endforeach; ?>
@@ -42,7 +42,7 @@
 					
 					<div class="col-sm-2">
 						<label for="precio">Precio</label>
-						<input type="number" name="precio" class="form-control">
+						<input type="number" name="precio" onkeyup="validarPrecio(event, this)" class="form-control">
 					</div>
 
 				</div>
