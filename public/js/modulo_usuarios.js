@@ -95,7 +95,7 @@ $(document).ready(function() {
                     alert("LA CLAVE DEBE TENER ENTRE 8 Y 16 DIGITOS");
                     return false;
                 }
-                if( /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test( document.getElementById("email").value ) ){
+                if( !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test( document.getElementById("email").value )) ){
                     alert("CORREO ELECTRONICO NO VALIDO");
                     return false;
                 }

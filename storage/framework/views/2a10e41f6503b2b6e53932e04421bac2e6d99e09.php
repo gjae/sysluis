@@ -99,11 +99,11 @@
                     	<div class="row">
                     		<div class="col-sm-3">
                     			<label for="nombres">Nombre(s) de la persona</label>
-                    			<input type="text" onKeyUp="soloTexto(event, this)"  name="nombres" id="nombres" class="form-control">
+                    			<input type="text" onKeyUp="soloTexto(event, this)" onKeyDown="soloTexto(event, this)"  name="nombres" id="nombres" class="form-control">
                     		</div>
                     		<div class="col-sm-4">
                     			<label for="apellidos">Apellido(s) de la persona</label>
-                    			<input type="text" onKeyUp="soloTexto(event, this)" name="apellidos" id="apellidos" class="form-control">
+                    			<input type="text" onKeyUp="soloTexto(event, this)" onKeyDown="soloTexto(event, this)" name="apellidos" id="apellidos" class="form-control">
                     		</div>
                     	</div>
                     	<div class="row">
@@ -124,11 +124,11 @@
                     	<div class="row">
                     		<div class="col-sm-3">
                     			<label for="telefono_personal">Telefono personal</label>
-                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="telefono_personal" id="telefono_personal" class="form-control">
-                    		</div>
+                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)" onKeyDown="soloNumeros(event, this, 15)" name="telefono_personal" id="telefono_personal" class="form-control">
+                    		</div> 
                     		<div class="col-sm-4">
                     			<label for="telefono_habitacion">Telefono de habitación</label>
-                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="telefono_habitacion" id="telefono_habitacion" class="form-control">
+                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)" onKeyDown="soloNumeros(event, this, 15)" name="telefono_habitacion" id="telefono_habitacion" class="form-control">
                     		</div>
                     	</div>
                     	<div class="row">
