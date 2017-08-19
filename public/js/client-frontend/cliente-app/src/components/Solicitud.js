@@ -61,7 +61,32 @@ export default class Solicitud extends React.Component{
 			return options
 		}	
 	}
+ 	
+ 	validarCedula(e){
+	    var input = e.target
+	    var longitud = 15
+	    if( !(/^[0-9\-]+$/.test( input.value )) || input.value.length > longitud){
+	        alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+	        input.value = input.value.substring(0 , (input.value.length - 1) ) 
+	     }
+ 	}
 
+ 	soloTexto(e){
+ 		var input = e.target
+        if( ( /\d|\u00C0|\u017F|[`~!@#$%^&*()_°¬|+\-=?;:'",.<>\{\}\[\]\\\/]/.test(input.value) ) ){
+            alert("EL NOMBRE DE UNA PERSONA NO PUEDE CONTENER SIMBOLOS ESPECIALES NI NÚMEROS")
+            input.value = input.value.substring(0 , (input.value.length - 1) )
+        } 	
+    }
+
+    soloNumeros(e){
+    	var input = e.target
+    	var longitud = 15
+        if( !(/^[0-9]+$/.test( input.value )) ){
+            alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+            input.value = input.value.substring(0 , (input.value.length - 1) )
+        }
+    }
 
 	render(){
 
@@ -77,15 +102,15 @@ export default class Solicitud extends React.Component{
 							</div>
 							<div className="col-sm-11">
 								<label for="cedula">Cedula</label>
-								<input type="text" required name="cedula" id="cedula" className="form-control" />
+								<input type="text" onChange={ (e) => {this.validarCedula(e)}}  required name="cedula" id="cedula" className="form-control" />
 							</div>
 							<div className="col-sm-4">
 								<label for="nombres">nombres</label>
-								<input type="text" required name="nombres" id="nombres" className="form-control" />
+								<input type="text" onChange={ e => { this.soloTexto(e) } } required name="nombres" id="nombres" className="form-control" />
 							</div>
 							<div className="col-sm-4">
 								<label for="apellidos">apellidos</label>
-								<input type="text" required name="apellidos" id="apellidos" className="form-control" />
+								<input type="text" onChange={ e => { this.soloTexto(e) } } required name="apellidos" id="apellidos" className="form-control" />
 							</div>
 
 							<div className="col-sm-3">
@@ -96,11 +121,11 @@ export default class Solicitud extends React.Component{
 						<div className="row">
 							<div className="col-sm-12 col-md-6 col-lg-6">
 								<label for="telefono">Telefono personal</label>
-								<input type="text" required name="telefono_personal" className="form-control" />
+								<input type="text" onChange = { (e)=>{ this.soloNumeros(e) }} required name="telefono_personal" className="form-control" />
 							</div>
-							<div className="col-sm-12 col-md-5 col-lg-6">
+							<div className="col-sm-12 col-md-5 col-lg-5">
 								<label for="telefono">Telefono de contacto</label>
-								<input type="text" required name="telefono_habitacion" className="form-control" />
+								<input type="text" onChange = { (e)=>{ this.soloNumeros(e) }} required name="telefono_habitacion" className="form-control" />
 							</div>
 						</div>
 						<div className="row">

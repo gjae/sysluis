@@ -54,6 +54,15 @@ export default class ConsultarServicio extends React.Component{
 		}
 	}
 
+	validarCodigo (e) {
+		var longitud = 10
+	    var input = e.target
+	    if( !(/^[0-9\-]+$/.test( input.value )) || input.value.length > longitud){
+	        alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+	        input.value = input.value.substring(0 , (input.value.length - 1) ) 
+	     }
+	}
+
 	render(){
 		return(
 			<div>
@@ -61,10 +70,11 @@ export default class ConsultarServicio extends React.Component{
 				<Grid>
 					<Row>
 						<Col xs={12} sm={12} md={8} lg={8}>
+						    <label>Aqui puede consultar el estatus de su solicitud</label>
 							<div className="input-group">
 							
 
-								<input type="text" name="codigo_solicitud" id="codigo_solicitud" className="form-control" placeholder="Codigo de la solicitud" /> 
+								<input onChange={ (e) => { this.validarCodigo(e) } } type="text" name="codigo_solicitud" id="codigo_solicitud" className="form-control" placeholder="Codigo de la solicitud" /> 
 								<span className="input-group-btn">
 								<button id="buscar" onClick={ ()=>{this.buscarCodigo()} } className="btn btn-success">Consultar</button>
 								</span>
