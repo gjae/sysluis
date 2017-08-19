@@ -5,6 +5,10 @@
             alert("EL NOMBRE DE UNA PERSONA NO PUEDE CONTENER SIMBOLOS ESPECIALES NI NÚMEROS")
             input.value = input.value.substring(0 , (input.value.length - 1) )
         }
+        if(input.value.length > 50)
+        {
+            input.value = input.value.substring(0, (input.value.length - 1))
+        }
     }
 
     function soloNumeros(evento, input, longitud){
@@ -13,6 +17,8 @@
             alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
             input.value = input.value.substring(0 , (input.value.length - 1) )
         }
+        if(input.value.length > longitud)
+            input.value = input.value.substring(0, (input.value.length - 1))
     }
 
 function validarCedula(cedula, longitud)

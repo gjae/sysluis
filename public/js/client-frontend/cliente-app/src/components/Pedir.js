@@ -65,6 +65,26 @@ export default class Pedir extends Component{
 			}
 		})
 	}
+ 	validarCedula(e){
+	    var input = e.target
+	    var longitud = 15
+	    if( !(/^[0-9\-]+$/.test( input.value )) || input.value.length > longitud){
+	        alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+	        input.value = input.value.substring(0 , (input.value.length - 1) ) 
+	     }
+ 	}
+
+ 	soloTexto(e){
+ 		var input = e.target
+        if( ( /\d|\u00C0|\u017F|[`~!@#$%^&*()_°¬|+\-=?;:'",.<>\{\}\[\]\\\/]/.test(input.value) ) ){
+            alert("EL NOMBRE DE UNA PERSONA NO PUEDE CONTENER SIMBOLOS ESPECIALES NI NÚMEROS")
+            input.value = input.value.substring(0 , (input.value.length - 1) )
+        } 	
+        if(input.value.length > 50)
+        {
+        	input.value = input.value.substring(0, (input.value.length - 1))
+        }
+    }
 
 	render(){
 		return(
@@ -78,15 +98,15 @@ export default class Pedir extends Component{
 								<Row>
 									<Col xs={12} sm={12} md={4} lg={4}>
 										<label>Nombres</label>
-										<input type="text" className="form-control" name="nombres" placeholder="Nombres del cliente" />
+										<input type="text" className="form-control" onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } name="nombres" placeholder="Nombres del cliente" />
 									</Col>
 									<Col xs={12} sm={12} md={4} lg={4}>
 										<label>Apellidos </label>
-										<input type="text" className="form-control" name="apellidos" placeholder="Apellidos del cliente" />
+										<input type="text" className="form-control" onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } name="apellidos" placeholder="Apellidos del cliente" />
 									</Col>
 									<Col xs={12} sm={12} md={4} lg={4}>
 										<label>Cedula</label>
-										<input type="text" className="form-control" name="cedula" placeholder="Ingresa tu numero de cedula" />
+										<input type="text" className="form-control"  onChange={ (e) => {this.validarCedula(e)}} name="cedula" placeholder="Ingresa tu numero de cedula" />
 									</Col>
 									<Col xs={12} sm={12} md={12} lg={12}>
 										<label>Direccion</label>

@@ -77,6 +77,10 @@ export default class Solicitud extends React.Component{
             alert("EL NOMBRE DE UNA PERSONA NO PUEDE CONTENER SIMBOLOS ESPECIALES NI NÚMEROS")
             input.value = input.value.substring(0 , (input.value.length - 1) )
         } 	
+        if(input.value.length > 50)
+        {
+        	input.value = input.value.substring(0, (input.value.length - 1))
+        }
     }
 
     soloNumeros(e){
@@ -86,6 +90,8 @@ export default class Solicitud extends React.Component{
             alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
             input.value = input.value.substring(0 , (input.value.length - 1) )
         }
+        if(input.value.length > longitud)
+        	input.value = input.value.substring(0, (input.value.length - 1))
     }
 
 	render(){
@@ -106,11 +112,11 @@ export default class Solicitud extends React.Component{
 							</div>
 							<div className="col-sm-4">
 								<label for="nombres">nombres</label>
-								<input type="text" onChange={ e => { this.soloTexto(e) } } required name="nombres" id="nombres" className="form-control" />
+								<input type="text" onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } required name="nombres" id="nombres" className="form-control" />
 							</div>
 							<div className="col-sm-4">
 								<label for="apellidos">apellidos</label>
-								<input type="text" onChange={ e => { this.soloTexto(e) } } required name="apellidos" id="apellidos" className="form-control" />
+								<input type="text" onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } required name="apellidos" id="apellidos" className="form-control" />
 							</div>
 
 							<div className="col-sm-3">
