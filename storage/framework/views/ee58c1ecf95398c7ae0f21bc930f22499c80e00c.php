@@ -26,7 +26,7 @@
 				<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 					<thead>
                         <tr>
-                            <th>Denominacón de la categoria</th>
+                            <th>Denominacón de la categoría</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -66,7 +66,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de usuarios <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestión de usuarios <span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 
@@ -75,7 +75,7 @@
                 <div id="formulario">
                     <form action="" method="post" id="insertar_datos" data-url="guardar">
                         <div class="col-sm-10">
-                            <label for="nombre_catergoria">Nombre de la nueva categoria</label>
+                            <label for="nombre_catergoria">Nombre de la nueva categoría</label>
                             <input type="text" name="nombre_categoria" id="nombre_categoria" class="form-control">
                              <?php echo e(csrf_field()); ?>
 

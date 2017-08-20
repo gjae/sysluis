@@ -38,7 +38,7 @@ export default class ConsultarServicio extends React.Component{
  	buscarCodigo = () =>{
 		let codigo = $("#codigo_solicitud").val()
 		if(codigo == "")
-			alert("USTED NO HA ESCRITO UN CODIGO VALIDO")
+			alert("El código que ha ingresado no es válido.")
 		else{
 			$.get("http://localhost:8000/solicitudes/consultar-estatus/"+codigo, (res)=>{
 				if(res.error){
@@ -58,7 +58,7 @@ export default class ConsultarServicio extends React.Component{
 		var longitud = 10
 	    var input = e.target
 	    if( !(/^[0-9\-]+$/.test( input.value )) || input.value.length > longitud){
-	        alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+	        alert("El campo que intenta utilizar solo debe contener carácteres numericos y de tener una longitud máxima de "+longitud+ " CARACTERES")
 	        input.value = input.value.substring(0 , (input.value.length - 1) ) 
 	     }
 	}

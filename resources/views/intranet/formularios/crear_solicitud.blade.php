@@ -8,11 +8,11 @@
 								<hr class="divider" />
 							</div>
 							<div class="col-sm-11">
-								<label for="cedula">Cedula</label>
+								<label for="cedula">Cédula</label>
 								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" id="cedula" class="form-control" />
 							</div>
 							<div class="col-sm-4">
-								<label for="nombres">Mombres</label>
+								<label for="nombres">Nombres</label>
 								<input type="text" required name="nombres"  onkeyup="soloTexto(event, this)" id="nombres" class="form-control" />
 							</div>
 							<div class="col-sm-4">
@@ -21,27 +21,27 @@
 							</div>
 
 							<div class="col-sm-3">
-								<label for="email">Correo electronico</label>
+								<label for="email">Correo Electrónico</label>
 								<input type="email" required name="email" class="form-control" />
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md-6 col-lg-6">
-								<label for="telefono">Telefono personal</label>
+								<label for="telefono">Teléfono personal</label>
 								<input type="text" required onkeyup="soloNumeros(event, this, 15)" name="telefono_personal" class="form-control" />
 							</div>
 							<div class="col-sm-12 col-md-5 col-lg-5">
-								<label for="telefono">Telefono de contacto</label>
+								<label for="telefono">Teléfono de contácto</label>
 								<input type="text" required onkeyup="soloNumeros(event, this, 15)" name="telefono_habitacion" class="form-control" />
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-10">
-								<h3>Datos del servicio</h3>
+								<h3>Datos del Servicio</h3>
 								<hr class="divider" />
 							</div>
 							<div class="col-sm-6">
-								<label for="tipo_servicio">Tipo de servicio solicitado</label>
+								<label for="tipo_servicio">Tipo de Servicio Solicitado</label>
 								<select name="tipo_id"  required id="" class="form-control">
 									<option value="">-----</option>
 									@foreach($tiposervicio as $key => $tipo)
@@ -55,7 +55,7 @@
 							</div>
 
 							<div class="col-sm-5">
-								<label for="tipo_servicio">Categoria del servicio</label>
+								<label for="tipo_servicio">Categoría del servicio</label>
 								<select name="categoria_id" required id="" class="form-control">
 									<option value="">----------</option>
 									@foreach($categorias as $key => $categoria)
@@ -73,7 +73,7 @@
 									<textarea name="direccion" required id="direccion" class="form-control" cols="30" rows="10"></textarea>
 								</div>
 								<div class="col-sm-11">
-									<label for="direccion">Explique aquí brevemente su problema</label>
+									<label for="direccion">Explique aquí su problema</label>
 									<textarea name="detalles" required id="detalles" class="form-control" cols="30" rows="10"></textarea>
 								</div>
 							</div>

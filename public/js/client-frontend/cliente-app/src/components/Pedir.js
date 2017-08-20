@@ -43,7 +43,7 @@ export default class Pedir extends Component{
 
 		let formulario = $("#guardar").serialize()
 		if( formulario.indexOf('=&') != -1){
-			alert("APARENTEMENTE AUN TIENES CAMPOS SIN COMPLETAR; DEBES LLENAR TODO EL FORMULARIO PARA PODER CONTINUAR CON LA OPERACION");
+			alert("Aún faltan campos por completar.");
 			return false;
 		}
 
@@ -69,7 +69,7 @@ export default class Pedir extends Component{
 	    var input = e.target
 	    var longitud = 15
 	    if( !(/^[0-9\-]+$/.test( input.value )) || input.value.length > longitud){
-	        alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+	        alert("El campo que intenta utilizar solo debe contener carácteres numericos y de tener una longitud máxima de "+longitud+ " CARACTERES")
 	        input.value = input.value.substring(0 , (input.value.length - 1) ) 
 	     }
  	}
@@ -77,7 +77,7 @@ export default class Pedir extends Component{
  	soloTexto(e){
  		var input = e.target
         if( ( /\d|\u00C0|\u017F|[`~!@#$%^&*()_°¬|+\-=?;:'",.<>\{\}\[\]\\\/]/.test(input.value) ) ){
-            alert("EL NOMBRE DE UNA PERSONA NO PUEDE CONTENER SIMBOLOS ESPECIALES NI NÚMEROS")
+            alert("El nombre de la persona no debe contener símbolos especiales ni numéricos.")
             input.value = input.value.substring(0 , (input.value.length - 1) )
         } 	
         if(input.value.length > 50)

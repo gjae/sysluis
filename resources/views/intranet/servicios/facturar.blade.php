@@ -9,7 +9,7 @@
 	<div class="col-sm-8">
 		<h3 class="page-header">Facturar servicio</h3>
 		<p>
-			En esta tabla solo apareceran aquellas solicitudes con un estado "LISTO"
+			En esta tabla solo apareceran aquellas solicitudes con un estado de "LISTO"
 			o "TERMINADO"
 		</p>
 	</div>
@@ -21,7 +21,7 @@
 		<table class="table table-striped table-hover" id="dataTables-example">
 			<thead>
 				<tr>
-					<th>Codigo</th>
+					<th>Código</th>
 					<th>Fec. solicitud</th>
 					<th>Cliente</th>
 					<th>Opciones</th>

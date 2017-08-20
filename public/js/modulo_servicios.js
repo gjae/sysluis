@@ -37,7 +37,7 @@ $(document).ready(function(){
 			return false;
 		}
 
-		if(confirm('¿Esta seguro de realizar esta operacion?'))
+		if(confirm('¿Esta seguro de realizar esta operación?'))
 		{
 			$.post(url, datos, function(response){
 				alert(response.mensaje);

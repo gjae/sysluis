@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bienvenido, logeese</title>
+    <title>Bienvenido, Monsalve Servi-Tech C.A</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -42,7 +42,7 @@
                  <img src="{{ 'http://localhost/sysluis/public/img/'.App\Empresa::first()->logo }}" alt="" style="margin-left: -70px;  max-width: 500px;" class="responsive-img">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Por favor, ingrese sus credenciales</h3>
+                        <h3 class="panel-title">Por favor, ingrese su usuario y contraseña: </h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" method="POST" action="{{ url('/login') }}">
@@ -58,7 +58,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <p class="text-danger">
-                                                <strong>Error usuario o clave incorrectos</strong>
+                                                <strong>Error: Usuario o Clave incorrectos.</strong>
                                             </p>    
                                         </div>
                                     </div>

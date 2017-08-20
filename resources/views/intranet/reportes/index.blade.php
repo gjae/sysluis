@@ -12,7 +12,7 @@
 	<div class="row">
 
 		<div class="col-sm-4">
-			<label for="">Cedula o rif del comprador</label>
+			<label for="">Cédula o Rif del comprador</label>
 			<form id="comprador">
 
 				<div class="input-group">
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		event.preventDefault()
 		var cedula = $("#cedula");
 		if(cedula.val() == ''){
-			alert("DEBE INGRESAR UNA CEDULA O RIF");
+			alert("Debe ingresar una cédulao rif.");
 			return false;
 		}
 

@@ -92,7 +92,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de usuarios <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestión de usuarios <span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 
@@ -103,14 +103,14 @@
                         <input type="hidden" id="user_id" name="user_id" value="">
                         <div class="col-sm-3">
                             <center>
-                                <label for="cedula" id="labele">Cedula de la persona<span id="verificando" class=""></span></label>
+                                <label for="cedula" id="labele">Cédula de la persona<span id="verificando" class=""></span></label>
 
                                 <input class="form-control" onKeyUp="soloNumeros(event, this, 10)" type="text" id="cedula" name="cedula" required placeholder="Ej. 11111111"> 
                                 
                             </center>
                         </div>
                         <div class="col-sm-4">
-                            <label for="email">Correo electronico</label>
+                            <label for="email">Correo electrónico</label>
                             <input type="text"  id="email" name="email" class="form-control">
                         </div>
                     </div>

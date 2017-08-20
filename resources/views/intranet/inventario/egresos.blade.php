@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<h3 class="page-header">
-				Egreso de mercancia
+				Egreso de mercancía
 			</h3>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 			<div class="row">
 				<input type="hidden" id="stock_id" name="stock_id">
 				<div class="col-sm-3">
-					<label for="producto">Codigo del producto</label>
+					<label for="producto">Código del producto</label>
 					<input type="text" class="form-control" name="codigo_hardware" id="codigo_hardware" onkeypress="buscarProducto(event, this.value)">
 				</div>
 				<div class="col-sm-3">

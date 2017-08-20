@@ -12,7 +12,7 @@
 					</div>
 
 					<div class="col-sm-5">
-						<label for="codigo_hardware">Codigo del dispositivo</label>
+						<label for="codigo_hardware">Código del dispositivo</label>
 						<input type="text" name="codigo_hardware" id="codigo_hardware" class="form-control">
 					</div>
 
@@ -26,7 +26,7 @@
 
 					<div class="col-sm-5">
 						
-						<label for="proveedor">Categoria del producto</label>
+						<label for="proveedor">Categoría del producto</label>
 						<select name="categoria_id" id="categoria_id" class="form-control">
 							<option value="">-----------------</option>
 							@foreach($categorias as $categoria)

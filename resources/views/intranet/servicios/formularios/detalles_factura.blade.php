@@ -72,7 +72,7 @@
 		</div>
 
 		<div class="col-sm-3 hidden" id="nro_transaccion">
-			<label for="">Nro. de transaccion / cheque</label>
+			<label for="">Nro. de transacción / cheque</label>
 			<input type="text" name="codigo_pago" id="codigo_pago" class="form-control">
 		</div>
 	</div>
@@ -88,18 +88,18 @@
 			<input type="text" value="{{ $solicitud->cliente->persona->nombres.' '.$solicitud->cliente->persona->apellidos }}" readonly id="cliente" class="form-control">
 		</div>
 		<div class="col-sm-2">
-			<label for="codigo">Codigo</label>
+			<label for="codigo">Código</label>
 			<input type="text" value="{{ $solicitud->codigo_solicitud }}" readonly id="codigo" class="form-control">
 		</div>
 
 		<div class="col-sm-2">
-			<label for="fecha">Fec. solicitud</label>
+			<label for="fecha">Fec. Solicitud</label>
 			<input type="text" readonly id="fecha" value="{{ $solicitud->created_at->format('d-m-Y') }}" class="form-control">			
 
 		</div>
 		
 		<div class="col-sm-8">
-			<label for="detalles">Detalles y observaciones</label>
+			<label for="detalles">Detalles y Observaciones</label>
 			<textarea name="detalles" readonly id="" cols="30" rows="10" class="form-control">{{ $solicitud->detalles }}</textarea>
 		</div>
 	</div>

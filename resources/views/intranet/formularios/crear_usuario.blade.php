@@ -19,12 +19,12 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-3">
-			<label for="correo">Telefono personal</label>
+			<label for="correo">Teléfono personal</label>
 			<input type="text" id="telefono_personal" onKeyUp="soloNumeros(event, this, 15)" class="form-control" name="telefono_personal">
 		</div>
 
 		<div class="col-sm-3">
-			<label for="correo">Telefono de habitación</label>
+			<label for="correo">Teléfono de habitación</label>
 			<input type="text" id="telefono_habitacion" onKeyUp="soloNumeros(event, this, 15)" class="form-control" name="telefono_habitacion">
 		</div>
 	</div>

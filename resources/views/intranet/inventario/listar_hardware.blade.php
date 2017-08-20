@@ -25,10 +25,10 @@
         @endif
 
         <div class="col-lg-12">
-            <h1 class="page-header">Stock de mercancía a la fecha</h1>
+            <h1 class="page-header">Stock de Mercancía a la Fecha</h1>
                     <div class="panel panel-primary">
             <div class="panel-heading">
-                Listado de equipos y mercancía disponible a {{ Carbon\Carbon::now()->format('d/m/Y') }}
+                Listado de Equipos y Mercancía disponible a {{ Carbon\Carbon::now()->format('d/m/Y') }}
             </div>
                         <!-- /.panel-heading -->
             <div class="panel-body">
@@ -89,7 +89,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de inventario<span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestión de inventario<span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 

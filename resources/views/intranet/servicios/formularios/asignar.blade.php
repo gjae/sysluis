@@ -6,7 +6,7 @@
 	<input type="hidden" id="iva_servicio" name="iva" value="0">
 	<div class="row">
 		<div class="col-sm-8">
-			<label for="empleados">Lista de empleados activos</label>
+			<label for="empleados">Lista de Empleados Activos</label>
 			<select name="empleado_id" id="empleado_id" class="form-control">
 				@foreach($empleados as $empleado)
 					

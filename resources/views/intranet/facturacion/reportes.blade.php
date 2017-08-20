@@ -16,7 +16,7 @@
 		<div class="col-sm-7">
 			
 			<h1 class="page-header">
-				Generación de reportes
+				Generación de Reportes
 			</h1>
 			
 			<form action="#" method="GET" id="reportes">
@@ -25,10 +25,10 @@
 					<div class="row">
 						<div class="col-sm-4">
 
-							<label for="tipo_reporte">Tipo de reporte</label>
+							<label for="tipo_reporte">Tipo de Reporte</label>
 							<select name="tipo_reporte"  id="tipo_reporte" >
 								<option value="null">------</option>
-								<option value="enTiempo">Intervalo de fechas</option>
+								<option value="enTiempo">Intervalo de Fechas</option>
 							</select>
 						</div>
 					</div>

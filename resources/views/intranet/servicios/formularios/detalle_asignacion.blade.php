@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="col-sm-4">
-			<label for="codigo_solicitud">Codigo de la solicitud</label>
+			<label for="codigo_solicitud">Código de la solicitud</label>
 			<input type="text" readonly name="codigo_solicitud" id="codigo_solicitud" class="form-control" value="{{ $solicitud->codigo_solicitud }}">
 		</div>
 	</div>
@@ -61,7 +61,7 @@
 	<div class="row">
 		<div class="col-sm-6">
 			<h3 class="page-header">
-				Log de problemas resueltos
+				Registro de fallas
 			</h3>
 		</div>
 	</div>
@@ -71,7 +71,7 @@
 			<table class="table table-responsive">
 				<thead>
 					<td>Fecha y hora</td>
-					<td>Titulo</td>
+					<td>Título</td>
 					<td>Detalles</td>
 					<td>Opciones</td>
 				</thead>

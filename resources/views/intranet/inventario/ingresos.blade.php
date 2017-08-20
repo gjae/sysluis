@@ -3,7 +3,7 @@
 @section('contenedor')
 
 <div class="container">
-	<h3 class="page-header">Formulario de ingreso / reabastecimiento de mercancia</h3>
+	<h3 class="page-header">Formulario de Ingreso / Reabastecimiento de Mercancía</h3>
 
 	<section id="ingresos">
 		
@@ -18,7 +18,7 @@
 						<div class="row">
 							
 							<div class="col-sm-4">
-								<label for="hardware_codigo">Codigo del producto</label>
+								<label for="hardware_codigo">Código del producto</label>
 								<input type="text" name="hardware_codigo" id="hardware_codigo" placeholder="A32B55" class="form-control" onkeypress="buscarProducto(event, this.value)">
 							</div>
 							<div class="col-sm-4">
@@ -30,7 +30,7 @@
 						<div class="row">
 							
 							<div class="col-sm-4">
-								<label for="numero_factura">Numero de la factura de compra</label>
+								<label for="numero_factura">Número de la factura de compra</label>
 								<input type="text" name="numero_factura" class="form-control" id="numero_factura">
 							</div>
 

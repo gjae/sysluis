@@ -24,10 +24,10 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-7">
-			<h4 class="page-header">Tipo de accion</h4>
+			<h4 class="page-header">Tipo de acción</h4>
 			
-			<input type="radio" name="opcion" value="quitar"> Revocar permisos
-			<input type="radio" name="opcion" value="asignar"> Asignar permisos
+			<input type="radio" name="opcion" value="quitar"> Revocar Permisos
+			<input type="radio" name="opcion" value="asignar"> Asignar Permisos
 			
 		</div>
 	</div>

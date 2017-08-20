@@ -7,7 +7,7 @@
 	
 	<div class="row">
 		<div class="col-sm-5">
-			<h3 class="page-header">Manejo de metodos de egreso</h3>
+			<h3 class="page-header">Manejo de métodos de egreso</h3>
 		</div>
 	</div>
 		
@@ -28,9 +28,9 @@
 				
 				<thead>
 					<tr>
-						<th>Nombre del metodo</th>
-						<th>Codigo del metodo</th>
-						<th>Descripcion del metodo</th>
+						<th>Nombre del método</th>
+						<th>Código del método</th>
+						<th>Descripción del método</th>
 						<th>Opciones</th>
 					</tr>
 				</thead>
@@ -60,7 +60,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de metodos de egresos <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestión de métodos de egresos <span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 

@@ -29,9 +29,9 @@
 					<thead>
                         <tr>
                             <th>Fecha de agregacion</th>
-                            <th>Titulo</th>
+                            <th>Título</th>
                             <th>Detalles</th>
-                            <th>Codigo del caso</th>
+                            <th>Código del caso</th>
                             <th>Usuario</th>
                         </tr>
                     </thead>

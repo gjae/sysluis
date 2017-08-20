@@ -10,10 +10,10 @@
 		
 		<div class="col-sm-12 col-xs-12 col-md-3 col-lg-3">
 			
-			<label for="">Numero de factura</label>
+			<label for="">Número de factura</label>
 			<input type="text" id="factura_id" onkeyup="soloNumeros(event, this, 9)" placeholder="Ingresa el numero de factura y presione la tecla [ENTER]" name="factura_id" class="form-control">
 			<blockquote>
-				Ingrese el numero de la factura a consultar y presione enter
+				Ingrese el número de la factura a consultar y presione ENTER
 			</blockquote>
 
 		</div>
@@ -33,7 +33,7 @@ $(document).ready( ()=>{
 			var numero = $("#factura_id");
 			if(numero.val() == "")
 			{
-				alert("DEBE ESCRIBIR UN NUMERO DE FACTURA VALIDO")
+				alert("DEBE ESCRIBIR UN NúMERO DE FACTURA VÁLIDO")
 				return false;
 			}
 			

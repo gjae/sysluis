@@ -139,7 +139,7 @@ h6{
 					 <br>
 					 @if(!is_null($persona))
 					 Factura que se emite a nombre de: {{ $persona->nombres." ".$persona->apellidos }} <br>
-					 Cedula: {{ $persona->cedula }} <br>
+					 Cédula: {{ $persona->cedula }} <br>
 					 Emitida por: {{ Auth::user()->empleado->persona->nombres }} <br>
 					 Fecha y hora: {{ Carbon\Carbon::now()->format('d-m-Y h:i A') }}
 					 @endif

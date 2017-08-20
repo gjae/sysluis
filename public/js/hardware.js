@@ -87,7 +87,7 @@ function cargarDatos(event, form){
         input = "form."+datos[i]+".value";
 
         if( eval(input) == "" ){
-            alert("USTED AUN TIENE ALGUN CAMPO POR COMPLETAR EN EL FORMULARIO, NO PUEDE CONTINUAR SIN TENER COMPLETADO EL FORMULARIO")
+            alert("Aún tiene campos por completar en el formulario.")
             return false;
         }
     }

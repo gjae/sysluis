@@ -19,10 +19,10 @@ export default class Jumbo extends Component{
 					<Row>
 						<Col xs={12} sm={12} md={6} lg={6} style={ {'color': "#fff"} }>
 							<h2>
-								Ofrecemos el mejor servicio electronico
+								Ofrecemos el mejor servicio electrónico
 							</h2>
 							<h3>
-								A televisores, computadoras y laptops.
+								A Televisores (LED-LCD), Computadoras y Laptops.
 							</h3>
 						</Col>
 

@@ -87,21 +87,21 @@ $(document).ready(function() {
                 var password = document.getElementById('password').value;
                 var password2 = document.getElementById('password-repeat').value;
                 if((password != password2) || (password2=='' || password=='') ){
-                    alert("Las contraseñas deben coincidir y no estar vacias");
+                    alert("Las contraseñas deben coincidir y no estar vacías");
                     return false;
                 }
                 if( !(password.length >= 8 && password.length <= 16) )
                 {
-                    alert("LA CLAVE DEBE TENER ENTRE 8 Y 16 DIGITOS");
+                    alert("La clave debe poseer entre 8 y 16 dígitos.");
                     return false;
                 }
                 if( !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test( document.getElementById("email").value )) ){
-                    alert("CORREO ELECTRONICO NO VALIDO");
+                    alert("Correo electrónico no válido.");
                     return false;
                 }
                 if( document.getElementById('usuario') != null && document.getElementById('usuario').value == '')
                 {
-                    alert("Debe completar el campo de nombre de usuario");
+                    alert("Debe completar el campo de nombre de usuario.");
                     return false;
                 }
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
                $.post(url, {'id' : $("#user_id").val(), '_token': token},function(response){
 
                     if(!response.fail){
-                        alert("Se ha suprimido el registro satisfactoriamente");
+                        alert("Se ha suprimido el registro satisfactoriamente.");
                         location.reload();
 
                     }

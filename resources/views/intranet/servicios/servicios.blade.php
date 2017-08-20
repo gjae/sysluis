@@ -35,9 +35,9 @@
 				<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 					<thead>
                         <tr>
-                            <th>Codigo de solicitud</th>
+                            <th>Código de solicitud</th>
                             <th>Fecha de solicitud</th>
-                            <th>Cedula del cliente</th>
+                            <th>Cédula del cliente</th>
                             <th>Nombres del cliente</th>
                             <th>Opciones</th>
                         </tr>
@@ -67,7 +67,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestion de servicios<span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestión de servicios<span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 

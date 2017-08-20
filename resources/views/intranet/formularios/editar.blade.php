@@ -19,15 +19,15 @@
 			<input type="text" onKeyUp="soloTexto(event, this)" name="apellidos" id="apellidos" class="form-control" value="{{ $user->empleado->persona->apellidos }}">
 		</div>
 		<div class="col-sm-4 col-md-4 col-lg-4">
-			<label for="">Cedula</label>
+			<label for="">Cédula</label>
 			<input type="text" onKeyUp="soloNumeros(event, this, 10)" name="cedula" id="cedula" class="form-control" value="{{ $user->empleado->persona->cedula }}">
 		</div>
 		<div class="col-sm-5 col-md-5 col-lg-5">
-			<label for="">Telefono personal</label>
+			<label for="">Teléfono personal</label>
 			<input type="text" onKeyUp="soloNumeros(event, this, 15)"  name="telefono_personal" id="telefono_personal" class="form-control" value="{{ $user->empleado->persona->telefono_personal }}">
 		</div>
 		<div class="col-sm-5 col-md-5 col-lg-5">
-			<label for="">Telefono habitacion</label>
+			<label for="">Teléfono habitación</label>
 			<input type="text" onKeyUp="soloNumeros(event, this, 15)"  name="telefono_habitacion" id="telefono_habitacion" class="form-control" value="{{ $user->empleado->persona->telefono_habitacion }}">
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 					<input type="email" name="email" id="email" class="form-control" value="{{ $user->empleado->persona->email }}">
 				</div>
 				<div class="col-sm-10">
-					<label for="">Direccion de residencia</label>
+					<label for="">Dirección de residencia</label>
 					<textarea name="direccion" id="" cols="30" rows="10" class="form-control">{{ $user->empleado->persona->direccion }}</textarea>
 				</div>
 			</div>

@@ -114,7 +114,7 @@ $("#modal-click").click(function(e){
         $("#verificando").html('');
 		if(! response.fail)
 		{
-			alert('El cliente se ha registrado exitosamente');
+			alert('El cliente se ha registrado exitosamente.');
 			
 			document.getElementById('nombres').value='';
 			document.getElementById('apellidos').value='';
@@ -147,6 +147,6 @@ function facturar(evento)
 		$("#formulario_facturas").html(formulario);
 		ins = 0;
 	}
-	else alert("NO SE HA SELECCIONADO UN METODO DE PAGO");
+	else alert("No se ha seleccionado un metódo de pago.");
 
 }
