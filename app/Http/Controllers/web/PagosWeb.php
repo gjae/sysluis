@@ -14,6 +14,8 @@ use App\Cliente;
 use App\TipoServicios;
 use App\Servicios;
 use App\Hardware;
+use App\Depositos;
+use Carbon\Carbon;
 
 use App\Http\Controllers\Modulos\servicios\modelos\Solicitud;
 use DB;
@@ -96,13 +98,25 @@ class PagosWeb extends Controller
     	try{
     		$cliente  = $this->cliente($request);
     		$serv = $this->guardarServicio($productos, $total, $cliente, $articulos);
+
+        $name = md5(Carbon::now()->format('Y-m-d H:i:s').'_deposito').'.jpg';
+        $request->file('imagen_deposito')->move(public_path('img/uploaders'), $name);
+
+        $serv->soporteTransaccion()->save(
+          new Depositos([
+              'imagen_deposito' => $name,
+              'numero_transaccion' => $request->numero_transaccion,
+            ])
+        );
     		DB::commit();
 
-    		return response([
+        return redirect()->to('http://localhost:8000/consultar/factura-online?factura_id='.$serv->id);
+       // return dd($serv->soporteTransaccion);
+    		/*return response([
     			'error' => false,
     			'mensaje' => "Operacion realizada con exito, facuta # ".$serv->id,
     			'consultar' => url('consultar/factura-online?factura_id='.$serv->id)
-    		], 200)->header('Content-Type', 'application/json');
+    		], 200)->header('Content-Type', 'application/json');*/
 
     	}catch(\Exception $e){
     		DB::rollback();

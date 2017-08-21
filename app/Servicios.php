@@ -13,6 +13,9 @@ class Servicios extends Model
     	'cambio', 'cliente_id', 'concepto', 'modalidad_pago_id', 'codigo_pago', 'solicitud_id'
     ];
 
+    public function soporteTransaccion(){
+    	return $this->hasOne('App\Depositos', 'servicio_id');
+    }
 
     public function detalle_servicio()
     {
@@ -49,20 +52,6 @@ class Servicios extends Model
  	 * FUNCIONES DE TIPO GETTERS Y SETTERS
  	 */
  	
- 	public function getIdAttribute($value)
- 	{
- 		if($value < 10)
- 			return '0000000'.$value;
- 		else if($value < 100)
- 			return '000000'.$value;
- 		else if($value < 1000)
- 			return '00000'.$value;
- 		else if($value < 10000)
- 			return '0000'.$value;
- 		else if($value < 100000)
- 			return '0000'.$value;
- 	}	
-
  	public function getId(){
  		return $this->attributes['id'];
  	}

@@ -8,12 +8,12 @@
 					
 					<div class="col-sm-5">
 						<label for="nombre_hardware">Nombre del dispositivo</label>
-						<input type="text" name="nombre_hardware" id="nombre_hardware" placeholder="Ej: Monitor" class="form-control">
+						<input type="text" onKeyUp="textoYNumero(event, this, 40)" onKeyDown="textoYNumero(event, this, 40)" name="nombre_hardware" id="nombre_hardware" placeholder="Ej: Monitor" class="form-control">
 					</div>
 
 					<div class="col-sm-5">
 						<label for="codigo_hardware">Codigo del dispositivo</label>
-						<input type="text" name="codigo_hardware" id="codigo_hardware" class="form-control">
+						<input type="text" onKeyUp="textoYNumero(event, this, 7)" onKeyDown="textoYNumero(event, this, 7)" name="codigo_hardware" id="codigo_hardware" class="form-control">
 					</div>
 
 				</div>

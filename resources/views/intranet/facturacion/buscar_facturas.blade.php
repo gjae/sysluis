@@ -17,7 +17,24 @@
 			</blockquote>
 
 		</div>
-
+	</div>
+	<div class="row">
+		<div class="col-sm-12 col-xs-12 col-md-8 col-lg-8">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Factura</th>
+						<th>Fecha de transaccion</th>
+						<th>Nro. de transaccion</th>
+						<th>Total de la compra</th>
+						<th>Opciones</th>
+					</tr>
+				</thead>
+				<tbody id="datos">
+					
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
 
@@ -41,11 +58,21 @@ $(document).ready( ()=>{
 			$.get(url+"/consultar?factura_id="+numero.val(), (resp) =>{
 				if(resp.error)
 					alert(resp.mensaje)
-				else
-				{
-					var url = "http://"+location.host+"/consultar/factura-online?factura_id="+numero.val()
-					window.open(url, "_blank");
+				else{
+					var datos = `
+						<tr>
+							<td>Cliente</td>
+							<td>${numero.val()}</td>
+							<td>${resp.datos_factura.fecha}</td>
+							<td>${resp.deposito.numero_transaccion}</td>
+							<td>${resp.datos_factura.total}</td>
+							<td><
+						</tr>
+					`
+
+					$("#datos").html(datos)
 				}
+				console.log(resp)
 			});
 		}
 	})

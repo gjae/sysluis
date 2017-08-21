@@ -78,7 +78,7 @@
                     <form action="" method="post" id="insertar_datos" data-url="guardar">
                         <div class="col-sm-10">
                             <label for="nombre_catergoria">Nombre de la nueva categoria</label>
-                            <input type="text" name="nombre_categoria" id="nombre_categoria" class="form-control">
+                            <input type="text" onKeyUp="textoYNumero(event, this, 40)" onKeyDown="textoYNumero(event, this, 40)"  name="nombre_categoria" id="nombre_categoria" class="form-control">
                              {{ csrf_field() }}
                         </div>
                     </form>
