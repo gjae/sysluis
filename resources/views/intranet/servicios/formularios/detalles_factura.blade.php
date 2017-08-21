@@ -19,7 +19,7 @@
 
 		<div class="col-sm-4">
 			<label for="dinero_recibido">Dinero recibido</label>
-			<input type="number" name="dinero_recibido" id="dinero_recibido" class="form-control" onkeypress="calcularCambio(event, this.value)">
+			<input type="number" name="dinero_recibido" id="dinero_recibido" class="form-control" onkeydown="validarPrecio(event, this)" onkeyup="validarPrecio(event, this)" onkeypress="calcularCambio(event, this.value)">
 		</div>
 
 		<div class="col-sm-3">
@@ -56,7 +56,7 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<label for="">Concepto</label>
-			<input type="text" name="concepto" class="form-control">
+			<input onkeydown="textoYNumero(event, this, 30)" onkeyup="textoYNumero(event, this, 30)" type="text" name="concepto" class="form-control">
 		</div>
 
 		<div class="col-sm-3">
@@ -73,7 +73,7 @@
 
 		<div class="col-sm-3 hidden" id="nro_transaccion">
 			<label for="">Nro. de transaccion / cheque</label>
-			<input type="text" name="codigo_pago" id="codigo_pago" class="form-control">
+			<input type="text" name="codigo_pago" value="-" id="codigo_pago" class="form-control">
 		</div>
 	</div>
 

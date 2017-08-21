@@ -52,7 +52,7 @@
 
 				<div class="col-sm-3">
 					<label for="cantidad">Cantidad de unidades</label>
-					<input type="number" id="cantidad" name="cantidad" class="form-control" required>
+					<input type="number" onKeyUp="soloNumeros(event, this, 7)" id="cantidad" name="cantidad" class="form-control" required>
 				</div>
 			</div>
 			<br><br>

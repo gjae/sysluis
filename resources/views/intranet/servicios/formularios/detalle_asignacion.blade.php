@@ -98,9 +98,6 @@
 						<td>
 							<input type="text" placeholder="Solucion al problema"  name="detalles_log">
 						</td>
-						<td>
-							<button onClick="agregar(event)" class="btn btn-success add-log">Agregar</button>
-						</td>
 					</tr>
 				</tbody>
 			</table>

@@ -56,4 +56,13 @@ class Servicios extends Model
  		return $this->attributes['id'];
  	}
 
+    public static function getNroFactura($id){
+        $cantidad = 9 - strlen($id);
+        $ceros="";
+        for ($i=0; $i < $cantidad ; $i++) { 
+            $ceros.="";
+        }
+        return $ceros.$id;
+    }
+
 }

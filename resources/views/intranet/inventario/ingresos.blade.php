@@ -19,11 +19,11 @@
 							
 							<div class="col-sm-4">
 								<label for="hardware_codigo">Codigo del producto</label>
-								<input type="text" name="hardware_codigo" id="hardware_codigo" placeholder="A32B55" class="form-control" onkeypress="buscarProducto(event, this.value)">
+								<input type="text" onKeyUp="textoYNumero(event, this, 7)"   name="hardware_codigo" id="hardware_codigo" placeholder="A32B55" class="form-control" onkeypress="buscarProducto(event, this.value)">
 							</div>
 							<div class="col-sm-4">
 								<label for="nombre_hardware">Nombre del producto</label>
-								<input type="text" readonly name="nombre_hardware" id="nombre_hardware" placeholder="Nombre del producto" class="form-control">
+								<input type="text" readonly name="nombre_hardware" id="nombre_hardware"  placeholder="Nombre del producto" class="form-control">
 							</div>
 						</div>
 
@@ -31,12 +31,12 @@
 							
 							<div class="col-sm-4">
 								<label for="numero_factura">Numero de la factura de compra</label>
-								<input type="text" name="numero_factura" class="form-control" id="numero_factura">
+								<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="numero_factura" class="form-control" id="numero_factura">
 							</div>
 
 							<div class="col-sm-4">
 								<label for="cantidad">Cantidad adquirida</label>
-								<input type="number" name="cantidad" class="form-control" id="cantidad">
+								<input type="number" onKeyUp="soloNumeros(event, this, 4)" name="cantidad" class="form-control" id="cantidad">
 							</div>
 
 						</div>
@@ -131,6 +131,7 @@
 
 		$.post(location.href+'/guardar', data ,success);
 	}
+
 </script>
 
 @endsection
