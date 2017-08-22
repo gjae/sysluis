@@ -205,7 +205,6 @@ class Facturacion extends Controller
          * ORIGINAL QUE LLEGA DESDE ESTE MISMO METODO Y EL ID DEL SERVICIO
          * EL METODO RETORNA UN PDF
          */
-        
         if($servicio->tipo_servicio->denominacion == 'Servicios')
         {
           $facturaServicio = new \App\Http\Controllers\Modulos\servicios\Facturar(1);

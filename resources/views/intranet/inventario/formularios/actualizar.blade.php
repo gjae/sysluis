@@ -10,12 +10,17 @@
 					
 					<div class="col-sm-5">
 						<label for="nombre_hardware">Nombre del dispositivo</label>
-						<input type="text" value="{{ $hardware->nombre_hardware }}" name="nombre_hardware" id="nombre_hardware" placeholder="Ej: Monitor" class="form-control">
+						<input type="text" value="{{ $hardware->nombre_hardware }}" name="nombre_hardware" onKeyUp="textoYNumero(event, this, 40)" onKeyDown="textoYNumero(event, this, 40)" id="nombre_hardware" placeholder="Ej: Monitor" class="form-control">
 					</div>
 
 					<div class="col-sm-5">
+<<<<<<< HEAD
 						<label for="codigo_hardware">Código del dispositivo</label>
 						<input type="text" value="{{ $hardware->codigo_hardware }}" name="codigo_hardware" id="codigo_hardware" class="form-control">
+=======
+						<label for="codigo_hardware">Codigo del dispositivo</label>
+						<input type="text" value="{{ $hardware->codigo_hardware }}" name="codigo_hardware" onKeyUp="textoYNumero(event, this, 7)" onKeyDown="textoYNumero(event, this, 7)" id="codigo_hardware" class="form-control">
+>>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
 					</div>
 
 				</div>

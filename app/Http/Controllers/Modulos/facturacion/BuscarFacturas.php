@@ -49,7 +49,8 @@ class BuscarFacturas extends Controller
     				"hora" => $factura->created_at->format('h:i:s A')
     			],
     			'pago' => $factura->modalidad_pago,
-    			'detalles' => $detser
+    			'detalles' => $detser,
+                'deposito' => $factura->soporteTransaccion
     		];
     	}
     	else{

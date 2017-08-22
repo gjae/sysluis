@@ -7,3 +7,5 @@ Homestead.json
 /public/img/*.jpg
 /public/img/*.png
 /storage/framework/views/*.php
+/public/img/uploaders/*.jpg
+

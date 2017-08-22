@@ -39,6 +39,11 @@ $(document).ready(function() {
         $("#modal-click").click(function(){
             var datos = $("#insertar_datos");
             var url = location.href+'/'+datos.attr('data-url');
+
+            if( datos.serialize().indexOf('=&') != -1){
+                alert("APARENTEMENTE AUN TIENES CAMPOS SIN COMPLETAR; DEBES LLENAR TODO EL FORMULARIO PARA PODER CONTINUAR CON LA OPERACION");
+                return false;
+            }
             $.post(url, datos.serialize(),(resp) =>{
                 alert(resp.mensaje)
                 if(! resp.fail)

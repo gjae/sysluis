@@ -46,7 +46,7 @@ export default class Pedir extends Component{
 			alert("Aún faltan campos por completar.");
 			return false;
 		}
-
+		formulario = $("#guardar")
 		let productos = reactLocalStorage.getObject('carrito')
 
 		var articulos = [];
@@ -55,6 +55,9 @@ export default class Pedir extends Component{
 		for(var i = 0 ;i<long; i++){
 			articulos[i] = productos[i].codigo_hardware 
 		}
+
+		formulario.attr('action', 'http://localhost:8000/solicitudes/pagar?articulos='+articulos)
+		formulario.submit()
 
 		$.post('http://localhost:8000/solicitudes/pagar?articulos='+articulos, formulario, function(e){
 			alert(e.mensaje)
@@ -93,7 +96,7 @@ export default class Pedir extends Component{
 				<Grid>
 					<Row>
 						<Col xs={12} sm={12} lg={10}>
-							<form method="post" action="#" id="guardar">
+							<form method="post" encType="multipart/form-data" action="#" id="guardar">
 								<Carrito />
 								<Row>
 									<Col xs={12} sm={12} md={4} lg={4}>
@@ -126,12 +129,12 @@ export default class Pedir extends Component{
 										<input type="text" className="form-control" name="telefono_habitacion" placeholder="Telefono de contacto" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
-										<label>Numero de tarjeta</label>
-										<input type="text" className="form-control" name="numero_tarjeta" placeholder="Tarjeta de credito" />
+										<label>Numero de transaccion</label>
+										<input type="text" className="form-control" name='numero_transaccion' placeholder="Tarjeta de credito" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
-										<label>Fec. de vencimiento de la TDC</label>
-										<input type="date" className="form-control" name="fecha_vencimiento" />
+										<label>Soporte de transaccion</label>
+										<input type="file" className="form-control" name="imagen_deposito" />
 									</Col>
 									<br /><br />
 									<Col xs={12} sm={12} md={12} lg={6}>

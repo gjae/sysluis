@@ -154,9 +154,14 @@
         			window.open(location.href+'/factura/'+response.id, '_popup')
         		}
         	}
-
+            if( data.indexOf('=&') != -1 ){
+                alert("APARENTEMENTE AUN TIENES CAMPOS SIN COMPLETAR; DEBES LLENAR TODO EL FORMULARIO PARA PODER CONTINUAR CON LA OPERACION");
+                return false;
+            }
         	$.post(url, data, success);
         }
+        else
+        	alert("NO SE HA INGRESADO UN VALOR PARA EL CAMPO DE MONTO")
 	}
 
 	function modalidad_pago(opcion){
@@ -166,7 +171,7 @@
 		}
 		else if( opcion==1 && !$("#nro_transaccion").hasClass('hidden'))
 		{
-			$("#codigo_pago").val("")
+			$("#codigo_pago").val("-")
 			$("#nro_transaccion").addClass('hidden')
 		}
 	}
