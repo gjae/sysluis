@@ -75,8 +75,13 @@
                 <div id="formulario">
                     <form action="" method="post" id="insertar_datos" data-url="guardar">
                         <div class="col-sm-10">
+<<<<<<< HEAD
                             <label for="nombre_catergoria">Nombre de la nueva categoría</label>
                             <input type="text" name="nombre_categoria" id="nombre_categoria" class="form-control">
+=======
+                            <label for="nombre_catergoria">Nombre de la nueva categoria</label>
+                            <input type="text" onKeyUp="textoYNumero(event, this, 40)" onKeyDown="textoYNumero(event, this, 40)"  name="nombre_categoria" id="nombre_categoria" class="form-control">
+>>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
                              <?php echo e(csrf_field()); ?>
 
                         </div>

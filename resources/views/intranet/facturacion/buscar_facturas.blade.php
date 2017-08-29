@@ -25,8 +25,8 @@
 				<thead>
 					<tr>
 						<th>Factura</th>
-						<th>Fecha de transaccion</th>
-						<th>Nro. de transaccion</th>
+						<th>Fecha de transacción</th>
+						<th>Nro. de transacción</th>
 						<th>Total de la compra</th>
 						<th>Opciones</th>
 					</tr>
@@ -39,7 +39,7 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-12 col-xs-12 col-md-8 col-lg-8">
-			<h3 class="page-header">Soporte de la transaccion</h3>
+			<h3 class="page-header">Soporte de la transacción</h3>
 			<img src=""  class="img-responsive" id="img-transaccion">
 		</div>
 	</div>
