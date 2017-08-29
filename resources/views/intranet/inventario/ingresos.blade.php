@@ -18,13 +18,11 @@
 						<div class="row">
 							
 							<div class="col-sm-4">
-<<<<<<< HEAD
+
 								<label for="hardware_codigo">Código del producto</label>
 								<input type="text" name="hardware_codigo" id="hardware_codigo" placeholder="A32B55" class="form-control" onkeypress="buscarProducto(event, this.value)">
-=======
-								<label for="hardware_codigo">Codigo del producto</label>
-								<input type="text" onKeyUp="textoYNumero(event, this, 7)"   name="hardware_codigo" id="hardware_codigo" placeholder="A32B55" class="form-control" onkeypress="buscarProducto(event, this.value)">
->>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
+
+								
 							</div>
 							<div class="col-sm-4">
 								<label for="nombre_hardware">Nombre del producto</label>
@@ -35,13 +33,11 @@
 						<div class="row">
 							
 							<div class="col-sm-4">
-<<<<<<< HEAD
-								<label for="numero_factura">Número de la factura de compra</label>
-								<input type="text" name="numero_factura" class="form-control" id="numero_factura">
-=======
+
+								
+
 								<label for="numero_factura">Numero de la factura de compra</label>
 								<input type="text" onKeyUp="soloNumeros(event, this, 15)" name="numero_factura" class="form-control" id="numero_factura">
->>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
 							</div>
 
 							<div class="col-sm-4">
