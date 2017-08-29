@@ -10,13 +10,9 @@
 		
 		<div class="col-sm-12 col-xs-12 col-md-3 col-lg-3">
 			
-<<<<<<< HEAD
 			<label for="">Número de factura</label>
 			<input type="text" id="factura_id" onkeyup="soloNumeros(event, this, 9)" placeholder="Ingresa el numero de factura y presione la tecla [ENTER]" name="factura_id" class="form-control">
-=======
-			<label for="">Numero de factura</label>
-			<input type="text" id="factura_id" onkeyup="soloNumeros(event, this, 9)" onkeydown="soloNumeros(event, this, 9)" placeholder="Ingresa el numero de factura y presione la tecla [ENTER]" name="factura_id" class="form-control">
->>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
+
 			<blockquote>
 				Ingrese el número de la factura a consultar y presione ENTER
 			</blockquote>

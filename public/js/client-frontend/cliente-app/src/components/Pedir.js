@@ -55,6 +55,7 @@ export default class Pedir extends Component{
 		for(var i = 0 ;i<long; i++){
 			articulos[i] = productos[i].codigo_hardware 
 		}
+		reactLocalStorage.setObject('carrito', { carrito: [] })
 
 		formulario.attr('action', 'http://localhost:8000/solicitudes/pagar?articulos='+articulos)
 		formulario.submit()
@@ -89,6 +90,16 @@ export default class Pedir extends Component{
         }
     }
 
+	soloNumeros(e, longitud){
+	        
+	        var input = e.target
+	    if( !(/^[0-9]+$/.test( input.value )) ){
+	     //   alert("EL CAMPO QUE INTENTA USAR SOLO PUEDE POSEER CARACTERES NUMERICOS Y DEBE TENER UNA LONGITUD MAXIMA DE "+longitud+ " CARACTERES")
+	        input.value = input.value.substring(0 , (input.value.length - 1) )
+	    }
+	    if(input.value.length > longitud)
+	        input.value = input.value.substring(0, (input.value.length - 1))
+	}
 	render(){
 		return(
 			<div>
@@ -101,36 +112,36 @@ export default class Pedir extends Component{
 								<Row>
 									<Col xs={12} sm={12} md={4} lg={4}>
 										<label>Nombres</label>
-										<input type="text" className="form-control" onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } name="nombres" placeholder="Nombres del cliente" />
+										<input type="text" className="form-control" required onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } name="nombres" placeholder="Nombres del cliente" />
 									</Col>
 									<Col xs={12} sm={12} md={4} lg={4}>
 										<label>Apellidos </label>
-										<input type="text" className="form-control" onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } name="apellidos" placeholder="Apellidos del cliente" />
+										<input type="text" className="form-control" required onChange={ e => { this.soloTexto(e) } } onKeyDown={ e => { this.soloTexto(e) } } name="apellidos" placeholder="Apellidos del cliente" />
 									</Col>
 									<Col xs={12} sm={12} md={4} lg={4}>
 										<label>Cedula</label>
-										<input type="text" className="form-control"  onChange={ (e) => {this.validarCedula(e)}} name="cedula" placeholder="Ingresa tu numero de cedula" />
+										<input type="text" className="form-control" required  onChange={ (e) => {this.validarCedula(e)}} name="cedula" placeholder="Ingresa tu numero de cedula" />
 									</Col>
 									<Col xs={12} sm={12} md={12} lg={12}>
 										<label>Direccion</label>
-										<input type="text" className="form-control" name="direccion" placeholder="Direccion de residencia" />
+										<input type="text" className="form-control" required name="direccion" placeholder="Direccion de residencia" />
 									</Col>
 									<Col xs={12} sm={12} md={12} lg={12}>
 										<label>Correo electronico</label>
-										<input type="text" className="form-control" name="email" placeholder="Direccion de correo electronico" />
+										<input type="text" className="form-control" required name="email" placeholder="Direccion de correo electronico" />
 									</Col>
 
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Telefono personal</label>
-										<input type="text" className="form-control" name="telefono_personal" placeholder="Telefono personal" />
+										<input type="text" className="form-control" required onChange={ e => { this.soloNumeros(e, 9) } } onKeyDown={ e => { this.soloNumeros(e,9) } }  name="telefono_personal" placeholder="Telefono personal" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Telefono de contacto</label>
-										<input type="text" className="form-control" name="telefono_habitacion" placeholder="Telefono de contacto" />
+										<input type="text" className="form-control" required  onChange={ e => { this.soloNumeros(e, 9) } } onKeyDown={ e => { this.soloNumeros(e,9) } }  name="telefono_habitacion" placeholder="Telefono de contacto" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Numero de transaccion</label>
-										<input type="text" className="form-control" name='numero_transaccion' placeholder="Tarjeta de credito" />
+										<input type="text" className="form-control" required onChange={ e => { this.soloNumeros(e, 16) } } onKeyDown={ e => { this.soloNumeros(e,16)} } name='numero_transaccion' placeholder="NUMERO DE TRANSACCIÓN<" />
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Soporte de transaccion</label>
