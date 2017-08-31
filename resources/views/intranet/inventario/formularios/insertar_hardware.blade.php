@@ -12,13 +12,8 @@
 					</div>
 
 					<div class="col-sm-5">
-<<<<<<< HEAD
-						<label for="codigo_hardware">Código del dispositivo</label>
-						<input type="text" name="codigo_hardware" id="codigo_hardware" class="form-control">
-=======
 						<label for="codigo_hardware">Codigo del dispositivo</label>
 						<input type="text" onKeyUp="textoYNumero(event, this, 7)" onKeyDown="textoYNumero(event, this, 7)" name="codigo_hardware" id="codigo_hardware" class="form-control">
->>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
 					</div>
 
 				</div>

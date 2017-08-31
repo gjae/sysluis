@@ -55,9 +55,10 @@ class Reportes extends Controller
 	public function enTiempo(Request $request)
 	{
 		$servicios = Servicios::where('edo_reg', 1)
-								->where('created_at','>=', $request->fecha_desde.' 00:00:00')
-								->where('created_at','<=', $request->fecha_hasta.' 00:00:00')
-								->get();
+					->where('created_at','>=', $request->fecha_desde.' 00:00:00')
+					->where('created_at','<=', $request->fecha_hasta.' 00:00:00')
+					->get();
+
 		$data = [
 			'facturas' => $servicios,
 			'persona'  => Auth::user()->empleado->persona,

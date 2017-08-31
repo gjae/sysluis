@@ -14,10 +14,6 @@
 					</div>
 
 					<div class="col-sm-5">
-
-						<label for="codigo_hardware">Código del dispositivo</label>
-						<input type="text" value="{{ $hardware->codigo_hardware }}" name="codigo_hardware" id="codigo_hardware" class="form-control">
-
 						<label for="codigo_hardware">Codigo del dispositivo</label>
 						<input type="text" value="{{ $hardware->codigo_hardware }}" name="codigo_hardware" onKeyUp="textoYNumero(event, this, 7)" onKeyDown="textoYNumero(event, this, 7)" id="codigo_hardware" class="form-control">
 

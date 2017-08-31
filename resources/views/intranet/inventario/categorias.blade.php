@@ -68,7 +68,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Gestión de usuarios <span id="verificando"></span> </h4>
+        <h4 class="modal-title" id="myModalLabel">Gestión de categorias <span id="verificando"></span> </h4>
       </div>
       <div class="modal-body">
 
@@ -77,13 +77,8 @@
                 <div id="formulario">
                     <form action="" method="post" id="insertar_datos" data-url="guardar">
                         <div class="col-sm-10">
-<<<<<<< HEAD
-                            <label for="nombre_catergoria">Nombre de la nueva categoría</label>
-                            <input type="text" name="nombre_categoria" id="nombre_categoria" class="form-control">
-=======
                             <label for="nombre_catergoria">Nombre de la nueva categoria</label>
                             <input type="text" onKeyUp="textoYNumero(event, this, 40)" onKeyDown="textoYNumero(event, this, 40)"  name="nombre_categoria" id="nombre_categoria" class="form-control">
->>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
                              {{ csrf_field() }}
                         </div>
                     </form>

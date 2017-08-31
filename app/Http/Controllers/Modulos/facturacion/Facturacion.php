@@ -118,7 +118,8 @@ class Facturacion extends Controller
           'tipo_servicio_id'=>1, 
           'empleado_id' => Auth::user()->empleado->id,
           'cliente_id' => $data['cliente_id'],
-          'modalidad_pago_id' => $request->modalidad_pago_id
+          'modalidad_pago_id' => $request->modalidad_pago_id,
+          'solicitud_id' => 1
         ] );
         $ds = [];
         $iva = 0;
