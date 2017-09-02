@@ -106,6 +106,11 @@ $("#modal-click").click(function(e){
 	var cedula = document.getElementById('cedula');
 	datos += '&cedula='+cedula.value;
 
+	if( datos.indexOf('=&') != -1 ){
+		alert("USTED TIENE DATOS PENDIENTES POR COMPLETAR")
+		return false;
+	}
+
 	var url = location.href+'/crearCliente';
 
     $("#verificando").html('<div class="loader"></div>');

@@ -37,14 +37,8 @@ export default class Pedir extends Component{
 	}
 
 	realizarPago = () =>{
-		let emailRegex = '';
-		var email = document.getElementById('email').value;
-		emailRegex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i
-		if( !emailRegex.test(email))
-		{
-			alert("FORMATO DE CORREO ELECTRONICO NO VALIDO")
-			return false;
-		}
+		
+
 		this.setState({
 			pagando: false
 		})
@@ -136,7 +130,7 @@ export default class Pedir extends Component{
 									</Col>
 									<Col xs={12} sm={12} md={12} lg={12}>
 										<label>Correo electronico</label>
-										<input type="text" className="form-control" required name="email" id="email" placeholder="Direccion de correo electronico" />
+										<input type="email" className="form-control" required name="email" id="email" placeholder="Direccion de correo electronico" />
 									</Col>
 
 									<Col xs={12} sm={12} md={6} lg={6}>
