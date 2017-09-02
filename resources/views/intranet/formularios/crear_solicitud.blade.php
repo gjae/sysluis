@@ -7,21 +7,13 @@
 								<h3>Datos personales</h3>
 								<hr class="divider" />
 							</div>
-							<div class="col-sm-11">
-
-								<label for="cedula">Cédula</label>
-								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" id="cedula" class="form-control" />
-							</div>
 							<div class="col-sm-4">
 								<label for="nombres">Nombres</label>
 								<input type="text" required name="nombres"  onkeyup="soloTexto(event, this)" id="nombres" class="form-control" />
-
-								<label for="cedula">Cedula</label>
-								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" onkeydown="validarCedula('cedula', 10)" id="cedula" class="form-control" />
 							</div>
 							<div class="col-sm-4">
-								<label for="nombres">Nombres</label>
-
+								<label for="cedula">Cedula</label>
+								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" onkeydown="validarCedula('cedula', 10)" id="cedula" class="form-control" />
 							</div>
 							<div class="col-sm-2">
 								<label for="apellidos">Apellidos</label>
@@ -38,13 +30,6 @@
 
 								<label for="telefono">Teléfono personal</label>
 								<input type="text" required onkeyup="soloNumeros(event, this, 15)" name="telefono_personal" class="form-control" />
-							</div>
-							<div class="col-sm-12 col-md-5 col-lg-5">
-								<label for="telefono">Teléfono de contácto</label>
-								<input type="text" required onkeyup="soloNumeros(event, this, 15)" name="telefono_habitacion" class="form-control" />
-
-								<label for="telefono">Telefono personal</label>
-								<input type="text" required onkeyup="soloNumeros(event, this, 15)" onkeydown="soloNumeros(event, this, 15)" name="telefono_personal" class="form-control" />
 							</div>
 							<div class="col-sm-12 col-md-5 col-lg-5">
 								<label for="telefono">Telefono de contacto</label>
