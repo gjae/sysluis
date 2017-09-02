@@ -111,7 +111,7 @@
                         </div>
                         <div class="col-sm-4">
                             <label for="email">Correo electrónico</label>
-                            <input type="text"  id="email" name="email" class="form-control">
+                            <input type="text" value="algo@gmail.com"  id="email" name="email" class="form-control">
                         </div>
                     </div>
                     <div id="form-inputs">
