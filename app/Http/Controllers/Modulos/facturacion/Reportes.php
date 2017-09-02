@@ -59,13 +59,18 @@ class Reportes extends Controller
 					->where('created_at','<=', $request->fecha_hasta.' 00:00:00')
 					->get();
 
-		$data = [
-			'facturas' => $servicios,
-			'persona'  => Auth::user()->empleado->persona,
-			'empresa' =>  Empresa::first()
-		];
-		$pdf = PDF::loadView('pdf.reporte_enTiempo', $data);
+		if($servicios)
+		{
+			$data = [
+				'facturas' => $servicios,
+				'persona'  => Auth::user()->empleado->persona,
+				'empresa' =>  Empresa::first()
+			];
+			$pdf = PDF::loadView('pdf.reporte_enTiempo', $data);
 
-		return $pdf->stream();
+			return $pdf->stream();
+		}
+		else
+			return redirect()->to( url('dashboard/Facturacion/Reportes') );
 	}
 }
