@@ -109,7 +109,7 @@ $("#modal-click").click(function(e){
 	var campo = document.getElementById('email')
 		if( campo.value.indexOf("@") == -1 ){
 
-			alert("algo")
+			alert("DISCULPE, NO HA INTRODUCIDO UN CORREO CON FORMATO CORRECTO.")
 			return false;
 		}
 	if(datos.indexOf('=&') != -1){
