@@ -37,6 +37,7 @@ export default class Pedir extends Component{
 	}
 
 	realizarPago = () =>{
+		let emailRegex = '';
 		var email = document.getElementById('email').value;
 		emailRegex = /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i
 		if( !emailRegex.test(email))
