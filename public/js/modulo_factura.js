@@ -134,7 +134,11 @@ function facturar(evento)
 	var datos = $("#facturacion").serialize();
 
 	var url = location.href +'/factura';
-
+	if(datos.indexOf('=&') != -1 ){
+		alert("USTED TIENE DATOS DEL FORMULARIO SIN COMPLETAR");
+		return false;
+	}
+	
 	if( $("#modalidad_pago_id").val() != "" )
 	{
 		$.post(url, datos, function(response){
