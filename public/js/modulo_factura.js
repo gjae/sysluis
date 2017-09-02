@@ -107,13 +107,11 @@ $("#modal-click").click(function(e){
 	datos += '&cedula='+cedula.value;
 
 	var campo = document.getElementById('email')
-    var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
-    if (! emailRegex.test(campo.value)) {
-     	alert("FORMATO DE CORREO ELECTRONICO INVALIDO, REVISE!")
-     	return false;
-    } 
+		if( campo.value.indexOf("@") == -1 ){
 
+			alert("algo")
+			return false;
+		}
 	if(datos.indexOf('=&') != -1){
 		alert("AUN HAY DATOS QUE NO HAN SIDO COMPLETADOS EN EL FORMULARIO, VUELVA A INTENTARLO")
 		return false;
