@@ -100,7 +100,7 @@
             <div class="row">
                 <form action="" method="post" class=""  id="cargar_info">
                     <div class="row" id="row-form">
-                        <input type="hidden" id="user_id" name="user_id" value="">
+                        <input type="hidden" id="user_id" name="user_id" value="0">
                         <div class="col-sm-3">
                             <center>
                                 <label for="cedula" id="labele">Cédula de la persona<span id="verificando" class=""></span></label>

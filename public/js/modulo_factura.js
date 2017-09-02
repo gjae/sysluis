@@ -125,15 +125,13 @@ $("#modal-click").click(function(e){
 		if(! response.fail)
 		{
 			alert('El cliente se ha registrado exitosamente.');
-			
+			location.reload()
 			document.getElementById('nombres').value='';
 			document.getElementById('apellidos').value='';
 			document.getElementById('telefono_personal').value='';
 			document.getElementById('telefono_habitacion').value='';
 			document.getElementById('email').value='';
 			document.getElementById('telefono_direccion').value='';
-			location.reload()
-
 		}
 		else alert(response.mensaje_error);
 	});
