@@ -132,6 +132,7 @@ $("#modal-click").click(function(e){
 			document.getElementById('telefono_habitacion').value='';
 			document.getElementById('email').value='';
 			document.getElementById('telefono_direccion').value='';
+			location.reload()
 
 		}
 		else alert(response.mensaje_error);
