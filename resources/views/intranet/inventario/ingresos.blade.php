@@ -117,6 +117,9 @@
 			}
 		});
 
+		if( !bandera )
+			return false;
+
 		var cantidad = parseFloat($("#cantidad").val());
 
 		var sbtotal = cantidad * parseFloat( $("#precio_unitario").val() );
