@@ -106,11 +106,10 @@ $("#modal-click").click(function(e){
 	var cedula = document.getElementById('cedula');
 	datos += '&cedula='+cedula.value;
 
-	if( datos.indexOf('=&') != -1 ){
-		alert("USTED TIENE DATOS PENDIENTES POR COMPLETAR")
+	if(datos.indexOf('=&') != -1){
+		alert("AUN HAY DATOS QUE NO HAN SIDO COMPLETADOS EN EL FORMULARIO, VUELVA A INTENTARLO")
 		return false;
 	}
-
 	var url = location.href+'/crearCliente';
 
     $("#verificando").html('<div class="loader"></div>');
