@@ -59,7 +59,7 @@ class Reportes extends Controller
 					->where('created_at','<=', $request->fecha_hasta.' 00:00:00')
 					->get();
 
-		if($servicios)
+		if( count($servicios) > 0 )
 		{
 			$data = [
 				'facturas' => $servicios,
