@@ -8,9 +8,7 @@
 <div class="col-sm-4">
 	<label for="codigo_razon">Código de la razón</label>
 	<input type="text" onkeyup="textoYNumero(event, this, 6)" name="codigo_razon" value="" id="codigo_razon" class="form-control">
-	
-	<label for="descripcion_razon">Nombre de la razón</label>
-	<input type="text" onkeyup="soloTexto(event, this, 80)" onkeydown="soloTexto(event, this, 80)" value="" name="descripcion_razon" id="descripcion_razon" class="form-control">
+
 </div>
 
 
