@@ -49,10 +49,10 @@ class Solicitud extends Model
     public function setCodigoSolicitudAttribute($value)
     {
         $terminal = \DB::table('solicitudes')
-            ->select(\DB::raw("count(codigo_solicitud) as code  ") )
-            ->where('codigo_solicitud', 'LIKE', Carbon::now()->format('Y-m').'%' );
+            ->select(\DB::raw("count(id) as code  ") )
+            ->where('codigo_solicitud', 'LIKE', Carbon::now()->format('Ym').'%' )->first();
 
-        $terminal = $terminal +1;
+        $ultimos_digitos = $terminal->code + 1;
         $now = Carbon::now();
 
     	$this->attributes['codigo_solicitud'] = $now->year.'0'.$now->month.'-0'.$ultimos_digitos;

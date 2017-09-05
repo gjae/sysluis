@@ -54,13 +54,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                    	@foreach($hardwares as $hardware)
+                    	@foreach($hardwares as $hardware) 
                             @if($hardware->edo_reg == 1)
                                 <tr class="odd gradeX user_field">
                                     <td>{{ $hardware->nombre_hardware }}</td>
                                     <td>{{ $hardware->codigo_hardware }}</td>
                                     <td>{{ number_format($hardware->precio, 2) }}</td>
-                                    <td>{{ $hardware->stock->stock - \App\Hardware::hardwaresVendidosPorId($hardware->id)  }}</td>
+                                    <td>{{ ($hardware->stock->stock - $hardware->stock->egresos->sum('cantidad_egresada')) - \App\Hardware::hardwaresVendidosPorId($hardware->id)  }}</td>
                                     <td>
                                         <button class="btn btn-danger usuario-option delete" token="{{ csrf_token() }}" data-id="{{ $hardware->id }}" role="DELETE" >
                                             <span class="glyphicon glyphicon-remove"></span>

@@ -34,3 +34,8 @@ body{
 	background-color: #3465A4;
 	margin-top: -20px;
 }
+
+.imagepresentacion{
+	max-height: 130px;
+	max-width: 100px;
+}

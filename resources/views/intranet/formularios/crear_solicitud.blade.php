@@ -11,13 +11,14 @@
 								<label for="nombres">Nombres</label>
 								<input type="text" required name="nombres"  onkeyup="soloTexto(event, this)" id="nombres" class="form-control" />
 							</div>
-							<div class="col-sm-4">
-								<label for="cedula">Cedula</label>
-								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" onkeydown="validarCedula('cedula', 10)" id="cedula" class="form-control" />
-							</div>
+
 							<div class="col-sm-2">
 								<label for="apellidos">Apellidos</label>
 								<input type="text" required name="apellidos" onkeyup="soloTexto(event, this)" onkeydown="soloTexto(event, this)"  id="apellidos" class="form-control" />
+							</div>
+							<div class="col-sm-4">
+								<label for="cedula">Cedula</label>
+								<input type="text" required name="cedula"  onkeyup="validarCedula('cedula', 10)" onkeydown="validarCedula('cedula', 10)" id="cedula" class="form-control" />
 							</div>
 
 							<div class="col-sm-3">

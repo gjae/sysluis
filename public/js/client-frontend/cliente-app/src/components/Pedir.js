@@ -48,6 +48,11 @@ export default class Pedir extends Component{
 			alert("Aún faltan campos por completar.");
 			return false;
 		}
+
+		if( /\S+@\S+\.\S+/.test($("#email").val() ) == false){
+			alert("FORMATO DE CORREO ELECTRONICO INVALIDO")
+			return false;
+		}
 		formulario = $("#guardar")
 		let productos = reactLocalStorage.getObject('carrito')
 
@@ -126,7 +131,7 @@ export default class Pedir extends Component{
 									</Col>
 									<Col xs={12} sm={12} md={12} lg={12}>
 										<label>Direccion</label>
-										<input type="text" className="form-control" required name="direccion" placeholder="Direccion de residencia" />
+										<input type="text" maxlength="190" className="form-control" required name="direccion" placeholder="Direccion de residencia" />
 									</Col>
 									<Col xs={12} sm={12} md={12} lg={12}>
 										<label>Correo electronico</label>

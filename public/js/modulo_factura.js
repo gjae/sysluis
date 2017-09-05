@@ -143,8 +143,13 @@ function facturar(evento)
 	var datos = $("#facturacion").serialize();
 
 	var url = location.href +'/factura';
-	if(datos.indexOf('=&') != -1 ){
-		alert("USTED TIENE DATOS DEL FORMULARIO SIN COMPLETAR");
+	if( $("#total").val() == 0 ){
+		alert("AUN NO HA SELECCIONADO NINGUN ARTICULO Y NO SE PUEDE GENERAR LA FACTURA")
+		return false;
+	}
+
+	if( $("#nombre").val() == '' || $("#cedula").val() == '' ){
+		alert("NO SE HA ESPECIFICADO PERSONA A FACTURAR")
 		return false;
 	}
 	

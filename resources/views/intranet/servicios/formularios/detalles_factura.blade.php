@@ -72,13 +72,8 @@
 		</div>
 
 		<div class="col-sm-3 hidden" id="nro_transaccion">
-<<<<<<< HEAD
-			<label for="">Nro. de transacción / cheque</label>
-			<input type="text" name="codigo_pago" id="codigo_pago" class="form-control">
-=======
 			<label for="">Nro. de transaccion / cheque</label>
-			<input type="text" name="codigo_pago" value="-" id="codigo_pago" class="form-control">
->>>>>>> 6980015e514d1685fd039cf8eeda13a228337a82
+			<input type="text" name="codigo_pago" value="-" id="codigo_pago" class="form-control" maxlength="40">
 		</div>
 	</div>
 

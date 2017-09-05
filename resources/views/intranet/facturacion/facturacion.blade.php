@@ -124,11 +124,11 @@
                     	<div class="row">
                     		<div class="col-sm-3">
                     			<label for="telefono_personal">Teléfono personal</label>
-                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)"  name="telefono_personal" id="telefono_personal" class="form-control">
+                    			<input type="tel" maxlength="15" onKeyUp="soloNumeros(event, this, 15)"  name="telefono_personal" id="telefono_personal" class="form-control">
                     		</div> 
                     		<div class="col-sm-4">
                     			<label for="telefono_habitacion">Teléfono de habitación</label>
-                    			<input type="text" onKeyUp="soloNumeros(event, this, 15)"  name="telefono_habitacion" id="telefono_habitacion" class="form-control">
+                    			<input type="tel" maxlength="15" onKeyUp="soloNumeros(event, this, 15)"  name="telefono_habitacion" id="telefono_habitacion" class="form-control">
                     		</div>
                     	</div>
                     	<div class="row">

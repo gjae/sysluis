@@ -105,13 +105,13 @@
                             <center>
                                 <label for="cedula" id="labele">Cédula de la persona<span id="verificando" class=""></span></label>
 
-                                <input class="form-control" onKeyUp="soloNumeros(event, this, 10)" type="text" id="cedula" name="cedula" value="0" required placeholder="Ej. 11111111"> 
+                                <input class="form-control" onKeyUp="soloNumeros(event, this, 10)" maxlength="10" minlength="6" type="text" id="cedula" name="cedula" value="0" required placeholder="Ej. 11111111"> 
                                 
                             </center>
                         </div>
                         <div class="col-sm-4">
                             <label for="email">Correo electrónico</label>
-                            <input type="text" value="algo@gmail.com"  id="email" name="email" class="form-control">
+                            <input type="email"  value="algo@gmail.com"  id="email" name="email" class="form-control">
                         </div>
                     </div>
                     <div id="form-inputs">
