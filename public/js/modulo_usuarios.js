@@ -65,10 +65,10 @@ $(document).ready(function() {
             $.getJSON(url, '', function(response){
                 if(!response.fail)
                 {
-                    $("#verificando").html("");
                     $("#form-inputs").append(response.formulario);
                     $("#cargar_info").attr("util-form", form);
                 }
+                $("#verificando").html("");
             });
         });
 
@@ -86,7 +86,13 @@ $(document).ready(function() {
         $("#modal-click").click(function(e){
             var accion = $("#accion").attr('value');
           
-            if( $("#cargar_info").serialize().indexOf("=&") != -1 ){
+            var formulario = $("#cargar_info");
+                
+            if( accion == 'editar' ){
+                $("#row-form").html("")
+            }
+          //  alert(formulario.serialize())
+            if( $("#cargar_info").serialize().indexOf("=&") != -1 && accion != 'asignar_permisos' ){
                 alert("AUN TIENE DATOS POR COMPLETAR EN EL FORMULARIO");
                 return false;
             }
@@ -99,12 +105,12 @@ $(document).ready(function() {
                     alert("Las contraseñas deben coincidir y no estar vacías");
                     return false;
                 }
-                if( !(password.length >= 8 && password.length <= 16) )
+                if( !(password.length >= 8 && password.length <= 16) && accion !='editar')
                 {
                     alert("La clave debe poseer entre 8 y 16 dígitos.");
                     return false;
                 }
-                if( !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test( document.getElementById("email").value )) ){
+                if(accion!='editar' && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test( document.getElementById("email").value )) ){
                     alert("Correo electrónico no válido.");
                     return false;
                 }
@@ -116,9 +122,6 @@ $(document).ready(function() {
 
 
             }
-
-            var formulario = $("#cargar_info");
-                
 
             formulario.attr('action', location.href+"/"+accion);
             formulario.submit();
@@ -159,9 +162,10 @@ $(document).ready(function() {
                $.getJSON(url, '', function(response){
                     if(! response.fail)
                     {
-                        $("#verificando").html("");
+                        
                         $("#form-inputs").html(response.formulario);
                     }
+                    $("#verificando").html("");
                })
             }
         });
@@ -176,11 +180,12 @@ $(document).ready(function() {
 
         $("#verificando").html('<div class="loader"></div>');
         $.post(url, {'user_id': user_id, '_token': token}, function(response){
+            $("#verificando").html("");
             for(i = 0; i< response.permiso.length; i++)
             {
                 $("#"+response.permiso[i]).prop('checked', true);
             }
-            $("#verificando").html("");
+            
         });
     }
 

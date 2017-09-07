@@ -27,7 +27,7 @@
 			<input type="number" name="abono" onkeyup="validarPrecio(event, this)" value="0" id="abono" class="form-control" onkeypress="calcularTotal(event)">
 		</div>
 		<div class="col-sm-3">
-			<label for="iva_servicio">Total</label>
+			<label for="iva_servicio">Total (con IVA)</label>
 			<input type="number" onkeyup="validarPrecio(event, this)" name="total" id="total" class="form-control">
 		</div>
 	</div>

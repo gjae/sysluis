@@ -258,7 +258,8 @@ class Usuarios extends Controller
         $user = User::find($req->user_id);
 
         $data = $req->except('password');
-        $data['password'] = bcrypt( $req->password );
+        if( $req->password != Auth::user()->password )
+            $data['password'] = bcrypt( $req->password );
 
         DB::beginTransaction();
         try{
@@ -266,7 +267,8 @@ class Usuarios extends Controller
 
                 if($user->empleado->persona->update($req->all())){
                     
-                    $data['password'] = bcrypt($req->password);
+                    if( $req->password != Auth::user()->password )
+                        $data['password'] = bcrypt($req->password);
                     if($user->update( $data )){
                         Auditoria::create([
                             'accion' => 'EL USUARIO '.Auth::user()->empleado->persona->nombres.' HA REALIZADO UNA ACTUALIZACION DEL AL REGISTRO DEL USUARIO '.$user->usuario,

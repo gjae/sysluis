@@ -70,7 +70,7 @@ $(document).ready( ()=>{
 
 					var img = ""
 
-					if( resp.deoposito != null)
+					if( resp.deoposito != false)
 					var img = "http://"+location.host+'/img/uploaders/'+resp.deposito.imagen_deposito
 					
 					var datos = `

@@ -67,14 +67,6 @@ export default class Pedir extends Component{
 		formulario.attr('action', 'http://localhost:8000/solicitudes/pagar?articulos='+articulos)
 		formulario.submit()
 
-		$.post('http://localhost:8000/solicitudes/pagar?articulos='+articulos, formulario, function(e){
-			alert(e.mensaje)
-			if(! e.error){
-				productos = new Array();
-				reactLocalStorage.setObject('carrito', productos)
-				window.location.href = e.consultar
-			}
-		})
 	}
  	validarCedula(e){
 	    var input = e.target
@@ -152,7 +144,7 @@ export default class Pedir extends Component{
 									</Col>
 									<Col xs={12} sm={12} md={6} lg={6}>
 										<label>Soporte de transaccion</label>
-										<input type="file" className="form-control" name="imagen_deposito" />
+										<input type="file" className="form-control" name="imagen_deposito" id="imagen_deposito" />
 									</Col>
 									<br /><br />
 									<Col xs={12} sm={12} md={12} lg={6}>
