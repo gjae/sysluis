@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Carbon\Carbon;
+
 class Servicios extends Model
 {
     protected $table = "servicios";
@@ -15,6 +17,10 @@ class Servicios extends Model
 
     public function soporteTransaccion(){
     	return $this->hasOne('App\Depositos', 'servicio_id');
+    }
+
+    public function setCreatedAtAttribute($old){
+        $this->attributes['created_at'] = Carbon::parse($old)->format('Y-m-d');
     }
 
     public function detalle_servicio()
